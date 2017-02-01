@@ -1,0 +1,256 @@
+/*
+
+Cover-More/Air New Zealand Main Style Sheet - CDG Interactive, Inc.
+--------------------------------------------*/
+
+/*
+
+normalize.css v2.1.2 | MIT License | git.io/normalize
+--------------------------------------------*/
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+audio, canvas, video { display: inline-block; }
+audio:not([controls]) { display: none; height: 0; }
+[hidden] { display: none; }
+html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+a:focus { outline: thin dotted; }
+a:active, a:hover { outline: 0; }
+h1 { font-size: 2em; margin: 0.67em 0; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+dfn { font-style: italic; }
+hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
+mark { background: #ff0; color: #000; }
+code, kbd, pre, samp { font-family: monospace, serif; font-size: 1em; }
+pre { white-space: pre-wrap; }
+q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+small { font-size: 80%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+img { border: 0; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+legend { border: 0; padding: 0; }
+button, input, select, textarea { font-family: inherit; font-size: 100%; margin: 0; }
+button, input { line-height: normal; }
+button, select { text-transform: none; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
+button[disabled], html input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+/*
+
+Initialization/Defaults
+--------------------------------------------*/
+
+/* --- Block Elements --- */
+html { width: 100%; height: 100%; background: #fff; font-size: 62.5%; color: #58595b; } /* 62.5% = 10px = 1.0rem */
+
+  a img { border: none; }
+
+/* --- Header Text --- */
+h1, h2, h3, h4, h5, h6 { -webkit-margin-before: 0; -webkit-margin-after: 0; margin: 0 0 10px; color: #000; }
+
+h1 { margin: 0 0 10px; font-weight: normal; font-size: 28px; font-size: 2.8rem; line-height: 1.2; color: #00a0c1; } 
+h2 { margin: 0 0 7px; font-size: 18px; font-size: 1.8rem; line-height: 1; color: #00a0c1; }
+  h1 + h2 { margin-top: 30px; }
+  h2 img { vertical-align: middle; }
+h3 { margin: 0 0 3px; font-size: 15px; font-size: 1.5rem; line-height: 1.2222; color: #00a0c1; }
+h4 { margin: 0 0 15px; font-size: 12px; }
+h5 { margin: 0 0 15px; font-size: 11px; }
+h6 { margin: 0 0 15px; font-size: 10px; }
+
+/* --- Block Text --- */
+p, blockquote, caption, div { margin: 0 0 20px; }
+
+
+/* --- Text Elements --- */
+a { color: #58595b; text-decoration: underline; }
+  a:hover, a:focus, a:active { text-decoration: none; }
+sup { font-size: 9px; font-size: 0.9rem; }
+small { font-size: 10px; font-size: 1.0rem; }
+strong { font-weight: bold; }
+em { font-style: italic;  }
+
+/* --- List Items --- */
+ul { list-style: none outside none; margin: 0 0 15px 30px; padding: 0; }
+ol { list-style: decimal outside none; margin: 0 0 15px 30px; }
+  ul li, ol li { margin: 0; padding: 0 0 5px; }
+
+/* --- Definition Elements --- */
+dl, dt, dd {}
+dl {}
+dt {}
+dd {}
+
+/* --- Table  Elements --- */
+table {}
+th { text-align: left; vertical-align: top; }
+thead {}
+tbody {}
+tr {}
+td { vertical-align: top; }
+tfoot {}
+
+/* --- Form/Inputs --- */
+form { margin: 0; padding: 0; }
+fieldset { margin: 0; padding: 0; border: 0; }
+legend { color: #58595b; }
+label { display: block; font-size: 14px; font-size: 1.4rem; color: #58595b; cursor: pointer; }
+
+  input[type="text"], input[type="password"], textarea { margin-bottom: 0; padding: 3px 5px; border: 2px solid #ccc; font-size: 15px; font-size: 1.5rem; color: #58595b; }
+    input[type="text"]:focus, input[type="password"]:focus, textarea:focus { }
+  input[type="radio"], input[type="checkbox"] { vertical-align: middle; }
+  input[type="text"][disabled] { background: #fff; }
+
+  
+select { padding: 3px 5px; border: 2px solid #ccc; color: #58595b; }  
+
+textarea { width: 555px; height: 125px; margin: 0; border-radius: 4px; }
+ 
+button {}
+
+
+.buttonWell { float: left; margin-top: 20px; }
+
+::-webkit-input-placeholder { color: #58595b; }
+::-moz-placeholder { color: #58595b; } /* firefox 19+ */
+:-ms-input-placeholder { color: #58595b; } /* ie */
+input:-moz-placeholder { color: #58595b; }
+   
+.error { border: 2px solid #e00000 !important; } 
+  label.error { border: none !important; color: #e00000 !important; font-weight: bold; }
+
+
+/* 
+     Utility ID's
+     ----------------------- */      
+.clear { display: block; clear: both; overflow: hidden; width: 1px; height: 1px; margin: 0 -1px -1px 0; border: 0; font-size: 0; line-height: 0; }
+.hide { position: absolute; left: -9999px !important; top: 0; }
+.alignLeft { float: left; }
+.alignRight { float: right; }
+  
+
+/*
+
+Site Styles
+--------------------------------------------*/
+
+/* 
+  Body
+-----------------------------*/
+body { font-size: 14px; font-size: 1.4rem; line-height: 1.4285 /*20px*/; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+
+
+/* 
+  Additional Form Handling
+-----------------------------*/
+  .purchaseForm ol { list-style-type: none; margin: 0; padding: 0; }
+  
+  section fieldset, fieldset.section { overflow: hidden; margin-bottom: 20px; }  
+  fieldset h2 { margin: 20px 0 10px; font-size: 21px; font-size: 2.1rem; color: #333; text-transform: lowercase; }      
+
+
+/* 
+  Home/Get Quote
+-----------------------------*/  
+
+/* Quote Area */
+.shortQuote { width: 360px; height: 250px; margin: 20px 0 0 20px; padding: 47px 10px 10px; background: #fff; border: 8px solid #666; } 
+  .shortQuote h2, .shortQuote label { position: absolute; left: -9999px; }
+  .shortQuote select { width: 340px; }
+  .shortQuote input[type="text"] { width: 318px; padding: 5px 9px; }
+  
+  .shortQuote ul, .shortQuote ol { list-style: none outside none; margin: 0 0 5px 10px; padding: 0; }
+    .shortQuote ol > li { overflow: hidden; float: left; width: 100%; min-height: 20px; margin: 0; padding: 0 0 10px; }  
+        
+  .shortQuote .buttonWell { float: right; margin: 120px 35px 0 0; }
+    .shortQuote .buttonWell input { border-radius: 6px; }
+    
+.closeWindow { position: relative; top: -39px; left: 13px; float: right; display: block; width: 22px; height: 19px; margin: 0 0 0; padding: 3px 0 0; background: #000; border: 2px solid #fff; border-radius: 12px; font-size: 13px; font-size: 1.3rem; font-weight: bold; color: #fff !important; text-align: center; text-decoration: none; }  
+  .closeWindow:hover, .closeWindow:focus { text-decoration: none; }
+
+
+
+/*
+Country/Region Selector 
+-----------------------------*/
+#country { display: block; overflow: hidden; float: left; position: relative; z-index: 5; width: 212px; height: 19px; margin: 0; padding: 3px 35px 5px 89px; background: url(../files/images/backgrounds/bkg-country.png) no-repeat 312px center; background-size: 22px auto; border: 2px solid #ccc; font-size: 15px; font-size: 1.5rem; color: #000; vertical-align: middle; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; text-indent: -84px; }
+
+#country.ie8 { background: url(../files/images/backgrounds/bkg-country-legacy.png) no-repeat 310px center; }
+  #country em { padding-right: 10px; font-style: normal; color: #58595b; }
+  #country.openCountry { background-image: none; }
+
+.regionHelp { position: relative; z-index: 6; }
+
+  .shortQuote label[for="country"] { position: relative; top: 5px; left: 11px; z-index: 6; margin: 1px 0 -20px; cursor: default; }
+
+.countryDisplay { position: absolute; top: 53px; z-index: 4; display: none; width: 925px; min-height: 300px; margin: 0 0 0 -13px; padding: 58px 0 0; background: #fff; box-shadow: 0 1px 5px rgba(0,0,0,0.50); border: 1px solid #ccc; } /* Changed 11/7/13 */
+
+  .countryDisplay .groups-container { height: 385px; margin: 0; padding: 0; background: transparent url(../files/images/backgrounds/bkg-nav-regions.png) -820px 0 repeat-y; border-top: 1px solid #ddd; font-size: 12px; font-size: 1.2rem; }
+  
+        .shortQuote .countryDisplay label { position: relative !important; left: 0; }
+
+  .countryDisplay .group { position: absolute; left: 170px; width: 730px; }
+  .countryDisplay .group legend { position: absolute; left: -9999px; }
+  .countryDisplay .group.active { z-index: 1000 }
+  .countryDisplay label.group-label { position: absolute; display: block; margin-left: -170px; width: 170px; height: 34px; border-bottom: 1px solid #b1b1b1; }
+        .shortQuote .countryDisplay label.group-label strong  { float: left; display: block; width: 150px; height: 22px; padding: 12px 20px 0 10px; background: transparent url(../files/images/backgrounds/bkg-nav-regions.png) -320px 0 no-repeat; font-weight: normal; font-size: 11px; font-size: 1.1rem; line-height: 1.2; color: #292929; text-shadow: 1px 1px 1px white; cursor: pointer; }
+        .shortQuote .countryDisplay label.group-label:hover strong { font-weight: bold; }      
+        .countryDisplay .group input[type="radio"]:checked + label.group-label strong { background-position: -70px 0; font-weight: bold; color: #fff; text-shadow: none; }
+
+    input[type="radio"] + label ~ div.columns { overflow: auto; position: absolute; clip: rect(0,0,0,0); left: -9999px; top: 0; width: 100%; height: 360px; margin-top: -27px; padding-top: 10px; }   
+    input[type="radio"]:checked + label ~ div.columns { float: left; position: static !important; /*left: auto !important; top: auto; */} 
+    .ie8 .openList { float: left; position: static !important; }
+
+
+/* Android Bug Fix - Country Selector/Radio/Labels */
+.android .columns, .android-2 .columns { -webkit-animation: bugfix infinite 1s; }
+@-webkit-keyframes bugfix { from { fill: 0; } to { fill: 0; } }        
+    
+  .countryDisplay .column { position: relative; z-index: 10; float: left; width: 165px; margin: 0 0 0 10px; }
+    .countryDisplay .column li { margin: 0; padding: 0; }
+    .countryDisplay .column label { padding: 5px 0 5px 20px; border-radius: 3px; font-size: 12px; font-size: 1.2rem; cursor: pointer; }
+      .countryDisplay .column label:hover, .countryDisplay .column label:focus, .countryDisplay .column label:active { background: #ccc; color: #000; }
+      .countryDisplay .column input[type="radio"]:checked + label{ background: #09c; color: #fff; }
+      .selectedCountry { background: #09c; color: #fff; }
+
+  .countryDisplay .closeWindow { top: -73px; display: block; }
+
+  .countryDisplay input[type="radio"] { position: absolute; left: -9999px; }
+
+
+
+/* Autocomplete Overrides */
+.ui-autocomplete { overflow-x: hidden /* prevent horizontal scrollbar */; overflow-y: auto; width: 250px !important; max-height: 100px; border-radius: 0; box-shadow: 0 1px 5px rgba(0,0,0,0.50); font-family: Helvetica, Arial, sans-serif; }
+    .ui-autocomplete .ui-menu-item a { display: block; padding: 3px 10px; cursor: pointer; }
+    .ui-autocomplete .ui-menu-item a.ui-state-focus { background: #09C !important; border-color: #09C !important; border-radius: 0 !important; color: #FFF !important }  
+  .ui-autocomplete .ui-menu-item { background: transparent none; list-style-image: none !important; }
+  .ui-helper-hidden-accessible { position: absolute; clip: rect(0,0,0,0); }
+  
+/* Region Positioning */  
+.region-1 { top: 0px; }
+.region-2 { top: 35px; }
+.region-3 { top: 70px; }
+.region-4 { top: 105px; }
+.region-5 { top: 140px; }
+.region-6 { top: 175px; }
+.region-7 { top: 210px; }
+.region-8 { top: 245px; }
+.region-9 { top: 280px; }
+.region-10 { top: 315px; }
+
+  .shortQuote .countryDisplay label.region-2 strong, .shortQuote .countryDisplay label.region-3 strong, .shortQuote .countryDisplay label.region-4 strong { height: 29px; padding-top: 5px; }
+
+
+  /* Android 2.3/iScroll Solution */ 
+#wrapper, .scroller { margin: 0; padding: 0; }

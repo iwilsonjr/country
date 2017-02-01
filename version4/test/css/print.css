@@ -1,0 +1,82 @@
+/*
+
+Cover-More/MAS Print Style Sheet - Innate
+--------------------------------------------*/
+
+/*
+
+Initialization/Defaults
+--------------------------------------------*/
+body { min-width: 0; background: transparent none !important; border-top: 80px solid #cc0000; }
+h1 { top: -25px; width: auto; margin-left: 0; padding-left: 0; border: 0; }
+
+input[type="submit"], #btnPrint, .btnBack, .selectPlan, .buttonWell { display: none; }
+
+
+/* 
+  Header
+-----------------------------*/
+header { max-width: none; padding: 0; background: none; }
+
+.siteHeader { overflow: hidden; position: static; width: auto; height: auto; margin-top: -85px; margin-bottom: 0; padding-bottom: 10px; padding-left: 20px; }
+
+  .siteLogo { width: 235px; height: 70px; margin-top: 12px; }
+    .siteLogo img { top: 0; left: -146px; }
+
+  .support { display: block; float: right; margin: 10px 20px 0 0; font-size: 0.75rem; line-height: 1; font-family: "Gill Sans Light"; color: #fff; text-transform: uppercase; }
+    .support strong { display: block; margin-top: 5px; font-size: 1.875rem; font-family: "Gill Sans Bold"; color: #fff; }
+    .support a { color: #fff; }
+
+nav { display: none; }
+
+
+
+/* 
+  Container
+-----------------------------*/
+.wrapper { width: 100%; padding-top: 0; padding-bottom: 20px; background: transparent; }
+
+/* 
+  Article
+-----------------------------*/
+article { margin-bottom: 0; }
+
+/* 
+  Sidebar
+-----------------------------*/
+aside { float: none !important; clear: both; }
+.planSummary, .planSummary h2, dl.total { float: none; background: transparent none !important; border: 2px solid #ccc; box-shadow: none; color: #000; }
+  dl.total { border: 0; }
+.planSummary { padding-bottom: 20px; }
+.planSummary h2 { border-width: 1px; }
+
+/* 
+  Footer
+-----------------------------*/
+footer { width: 100%; background: transparent none !important; border-top: 68px solid #383a40; }
+.siteFooter { width: auto; max-width: none; padding-right: 20px; padding-left: 20px; color: #000; }
+	.siteFooter ul { display: none; }
+  footer .cmLogo { margin-top: -70px; margin-left: 0; margin: -70px 0 20px; padding: 0 0 25px; border: 0;  }
+
+
+/* 
+  Select Plan
+-----------------------------*/
+.benefitsTable { margin: 0 0 70px !important; }
+
+.selectPlan { display: none; }
+
+    .benefitsTable tbody th, .benefitsTable tbody td { background: transparent none !important; border: 1px solid #ccc !important; }  
+
+/* 
+  Confirmation
+-----------------------------*/    
+.addtocalendar, .policyWording, .print { display: none; } 
+.confirmHeader { padding-left: 0; background: none; }
+
+  /* Confirmation/Cards */
+    .card li { z-index: 0; float: left; }
+    .card li:nth-child(even) { clear: right; }
+    .card li:nth-child(5), .card li:nth-child(6) { margin-top: 120px; }
+      .card li img { box-shadow: none; }
+

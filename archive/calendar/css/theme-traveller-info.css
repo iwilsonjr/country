@@ -1,0 +1,66 @@
+/*
+
+Cover-More/Flight Centre AU Theme Style Sheet - Travellers - Innate
+--------------------------------------------*/
+
+/* Datepicker Overrides to the Overrides */
+.dob { z-index: 10; position: relative; }
+  .ui-datepicker { width: calc(100% - 20px) !important; max-width: 365px; /*max-width: 450px;*/ margin-top: 4px; }
+    .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next { display: none; }
+
+  .ui-datepicker select { width: 86px; height: 37px; margin-right: 5px !important; padding: 0 0.5rem; font-family: "Gill Sans Roman"; }
+  .ui-datepicker .ui-datepicker-title { margin-top: -7px; margin-left: 4px; }
+  .ui-datepicker .ui-datepicker-header { height: 54px; }
+
+  .datepickerHolder:after { content: ""; position: absolute; left: 10px; display: inline-block; width: 0; height: 0; margin-top: -22px; border: 13px solid transparent; border-bottom: 13px solid transparent; }
+    .datepickerHolder.selected:after { border-bottom-color: #0ba3b1; }  
+
+/* EMC */
+.healix { overflow: hidden; position: relative; margin-top: 40px; box-sizing: border-box; }
+  .healix h3 { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #e2dfda; font-size: 1.125rem; }
+  .healix fieldset, .healix div { float: none; clear: both; margin-bottom: 20px; }
+  .healix div { margin-top: 20px; padding-top: 20px; }
+
+    .healix div > label { margin-bottom: 10px; }
+    .healix legend { display: table; white-space: normal; }   
+
+  .healix .buttonWell { margin: 0; padding: 30px 0 20px; border: 0; }
+
+  .healix .buttonWell input { float: none; margin-bottom: 15px; padding-top: 0; background: #1483c0; border: 0; } 
+    .healix .buttonWell input:hover, .healix .buttonWell input:focus, .healix .buttonWell input:active { background: #0074a8; }
+
+  .healix .buttonWell input[type="button"] { height: 20px; padding-left: 25px; background: url(../files/images/buttons/btn-travellers.png) no-repeat 0 50%; background-size: 20px 20px; color: #0368b4; }
+    .healix .buttonWell input[type="button"]:focus, .healix .buttonWell input[type="button"]:hover, .healix .buttonWell input[type="button"]:active { text-decoration: underline; }
+
+    .healix .buttonWell input[type="button"]:last-child { margin-bottom: 0; } 
+
+  .healix table { width: 100%; margin-top: 25px; }
+  .healix thead { display: none; }
+  .healix th, .healix td { display: list-item; padding-bottom: 5px; }
+  .healix tr { display: block; margin-bottom: 10px; }
+.healix em { font-style: normal; font-weight: bold; }
+
+.healix .radioList label.error { position: absolute; left: 160px; margin-top: -21px; line-height: 1.3; }
+
+/* 
+  Large Phone/Small Tablet - 768px/48em
+-----------------------------*/
+@media screen and (min-width: 48em) {
+
+  /* Datepicker */
+  .ui-datepicker { right: auto; margin-left: 0; }
+    .ui-datepicker .ui-datepicker-header { margin-right: 0; }  
+      section .ui-datepicker select { width: 45% !important; }
+
+  .healix thead { display: table-row-group; }
+    .healix thead th { padding-bottom: 15px; }
+  .healix th, .healix td { display: table-cell; padding-right: 10px; padding-bottom: 5px; }
+  .healix tr { display: table-row; margin-bottom: 10px; }    
+  .healix em { display: none; }
+
+  .healix .buttonWell { margin: 20px 0 5px; }    
+    .healix .buttonWell input { display: inline-block; width: auto; padding: 0 20px; } 
+ 
+  .healix .emcInfo { margin-bottom: 0; padding-right: 0; padding-left: 0; }    
+
+}    

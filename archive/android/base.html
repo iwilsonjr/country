@@ -1,0 +1,477 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Air New Zealand - Get Quote</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link type="text/css" rel="stylesheet" href="css/main.css" />
+    	<!--<link type="text/css" rel="stylesheet" href="css/mobile.css" />-->           
+    </head>
+
+    <body class="home">
+    
+
+    
+        <!--Container-->
+        <div class="outerContainer" id="content">
+        
+            <!--Inner Container-->
+            <div class="container_12 alpha omega">
+
+            
+                <!--Article-->
+                <article>
+                    <div class="article grid_12 alpha">
+                    
+                    	<!--User Content-->
+                    
+                        <h1>Get a Travel Insurance Quote</h1>
+                        
+                        <div class="homeTop grid_12 alpha omega">
+                        
+                        
+                            <!--Quote Form-->
+                            
+                            <form id="quoteForm" action="#" method="post">
+                            
+                                <div id="quoteWidget" class="shortQuote grid_5">
+                                	<h2>Get a Quote</h2>
+                                    
+                                    <ol>
+                                        <li class="hide">
+                                            <label for="regionID">Destination</label>
+                                            <select name="regionID" id="regionID">
+                                                <option value="">destination region</option>
+                                                <option value="13">New Zealand Only</option>
+                                                <option value="14">Australia</option>
+                                                <option value="15">South Pacific and Norfolk Is.</option>
+                                                <option value="16">South East Asia, Hong Kong, Japan</option>
+                                                <option value="17">UK</option>
+                                                <option value="18">Europe</option>
+                                                <option value="19">Africa, Middle East, Indian Sub-Continent & Asia</option>
+                                                <option value="20">North, Central and South America and the Caribbean</option>
+                                                <option value="21">New Zealand Inbound Travellers</option>
+                                            </select>
+                                            <a href="#help1" class="help">?</a> 
+                                        </li>
+                                        <li class="hide">
+                                            <label for="destinationCountryID">Country</label>
+                                            <select name="destinationCountryID" id="destinationCountryID">
+                                                <option value="">country most time spent in</option>
+                                            </select>
+                                            <a href="#help1" class="help">?</a> 
+                                        </li>                                     
+                                        <li>
+                                        
+                                        	<!--Revised Country/Region Functionality - Added/Changed 11/5/13-->
+
+                                            <!--Country Input-->  
+                                            <div class="hide">
+                                            <label for="country">Destination</label>
+                                            <input type="text" name="country" id="country" value="" />
+                                            <div class="drop-down-arrow"><span>&nbsp;</span></div>
+                                            
+                                            <input type="hidden" name="destinationCountryID" id="destinationCountryID" value="" />            
+											<!--Country Input-->  
+                                            
+                                            <a href="#help1" class="help regionHelp">?</a> <!--Added Class to Help - 11/5/13-->
+                                            </div>
+                                            
+                                            <!--Country Display-->
+											<div class="countryDisplay">
+                                            
+                                                <a href="#" title="X" class="closeWindow">X</a>
+
+                                                <div class="groups-container">
+                                                
+                                                  <div class="group">
+                                                    <div class="group-label region-1"><span>Worldwide</span></div>
+                                                    <div class="columns">
+                                                      <ul class="column">
+                                                        <li id="2754">Gibraltar</li>      
+                                                        <li id="242">Antarctica (Cruising)</li>
+                                                        <li id="184">Argentina</li>
+                                                        <li id="187">Bahamas</li>
+                                                        <li id="189">Barbados</li>
+                                                        <li id="190">Belize</li>
+                                                        <li id="191">Bermuda</li>
+                                                        <li id="192">Bolivia</li>
+                                                        <li id="193">Brazil</li>
+                                                        <li id="194">Canada</li>
+                                                        <li id="195">Cayman Islands</li>
+                                                        <li id="196">Chile</li>
+                                                        <li id="197">Colombia</li>
+                                                      </ul>
+                                                      <!--<ul class="column">
+                                                        <li id="82">Comoros</li>
+                                                        <li id="198">Costa Rica</li>
+                                                        <li id="199">Cuba</li>
+                                                        <li id="200">Dominica</li>
+                                                        <li id="249">Dominican Rep.</li>
+                                                        <li id="202">Ecuador</li>
+                                                        <li id="203">El Salvador</li>
+                                                        <li id="204">Falkland Islands</li>
+                                                        <li id="206">French Guiana</li>
+                                                        <li id="208">Greenland</li>
+                                                        <li id="209">Grenada</li>
+                                                        <li id="210">Guadeloupe</li>
+                                                      </ul>
+                                                      <ul class="column">
+                                                        <li id="211">Guatemala</li>
+                                                        <li id="212">Guyana</li>
+                                                        <li id="213">Haiti</li>
+                                                        <li id="214">Honduras</li>
+                                                        <li id="215">Jamaica</li>
+                                                        <li id="217">Martinique</li>
+                                                        <li id="218">Mexico</li>
+                                                        <li id="223">Netherlands Antilles</li>
+                                                        <li id="224">Nicaragua</li>
+                                                        <li id="255">Northern Marianas</li>
+                                                        <li id="225">Panama</li>
+                                                        <li id="226">Paraguay</li>
+                                                      </ul>
+                                                      <ul class="column">
+                                                        <li id="227">Peru</li>
+                                                        <li id="144">Puerto Rico</li>
+                                                        <li id="149">Sao Tome And Principe</li>
+                                                        <li id="277">St. Kitts-Nevis</li>
+                                                        <li id="230">St. Lucia</li>
+                                                        <li id="278">St. Vincent &amp; Grenadines</li>
+                                                        <li id="233">Suriname</li>
+                                                        <li id="279">Trinidad &amp; Tobago</li>
+                                                        <li id="236">United States of America</li>
+                                                        <li id="237">Uruguay</li>
+                                                        <li id="238">Venezuela</li>
+                                                        <li id="280">Virgin Islands</li>
+                                                      </ul> -->           
+                                                    </div>
+                                                  </div>
+                                                  <!--<div class="group">
+                                                    <div class="group-label region-2"><span>Worldwide excluding the Americas &amp; Antarctica</span></div>
+                                                    <div class="columns">
+                                                      <ul class="column">
+                                                        <li id="62">Afghanistan</li>
+                                                        <li id="10">Albania</li>
+                                                        <li id="11">Algeria</li>
+                                                        <li id="12">Andorra</li>
+                                                        <li id="63">Angola</li>
+                                                        <li id="65">Armenia</li>
+                                                        <li id="13">Austria</li>
+                                                        <li id="66">Azerbaijan</li>
+                                                        <li id="245">Azores</li>
+                                                        <li id="67">Bahrain</li>
+                                                        <li id="188">Bangladesh</li>
+                                                        <li id="14">Belarus</li>
+                                                        <li id="15">Belgium</li>
+                                                        <li id="68">Benin</li>
+                                                        <li id="69">Bhutan</li>
+                                                        <li id="282">Bosnia</li>
+                                                        <li id="70">Botswana</li>
+                                                        <li id="17">Bulgaria</li>
+                                                        <li id="72">Burkina Faso</li>
+                                                        <li id="73">Burundi</li>
+                                                        <li id="75">Cameroon</li>
+                                                        <li id="283">Canary Islands</li>
+                                                        <li id="246">Cape Verde</li>
+                                                        <li id="77">Central African Republic</li>
+                                                        <li id="78">Chad</li>
+                                                        <li id="79">China</li>
+                                                        <li id="286">Congo, Democratic Republic</li>
+                                                        <li id="18">Croatia</li>
+                                                        <li id="55">Cyprus</li>
+                                                        <li id="19">Czech Republic</li>
+                                                        <li id="20">Denmark</li>
+                                                        <li id="87">Djibouti</li>
+                                                        <li id="21">Egypt</li>
+                                                        <li id="89">Equatorial Guinea</li>
+                                                      </ul>
+                                                      <ul class="column">
+                                                        <li id="90">Eritrea</li>
+                                                        <li id="22">Estonia</li>      
+                                                        <li id="91">Ethiopia</li>
+                                                        <li id="205">Faroe Islands</li>
+                                                        <li id="23">Finland</li>
+                                                        <li id="24">France</li>
+                                                        <li id="93">Gabon</li>
+                                                        <li id="94">Gambia</li>
+                                                        <li id="25">Georgia</li>
+                                                        <li id="26">Germany</li>
+                                                        <li id="95">Ghana</li>
+                                                        <li id="27">Gibraltar</li>
+                                                        <li id="56">Greece</li>
+                                                        <li id="96">Guam</li>
+                                                        <li id="97">Guinea</li>
+                                                        <li id="98">Guinea-Bissau</li>
+                                                        <li id="262">Herzegovina</li>
+                                                        <li id="28">Hungary</li>
+                                                        <li id="29">Iceland</li>
+                                                        <li id="100">India</li>
+                                                        <li id="102">Iran</li>
+                                                        <li id="103">Iraq</li>
+                                                        <li id="30">Israel</li>
+                                                        <li id="31">Italy</li>
+                                                        <li id="250">Ivory Coast</li>
+                                                        <li id="104">Japan</li>
+                                                        <li id="105">Jordan</li>
+                                                        <li id="32">Kazakhstan</li>
+                                                        <li id="106">Kenya</li>
+                                                        <li id="107">Kiribati</li>
+                                                        <li id="263">Korea (north)</li>
+                                                        <li id="264">Korea (south)</li>
+                                                        <li id="109">Kuwait</li>
+                                                        <li id="110">Kyrgyzstan</li>
+                                                        <li id="33">Latvia</li>
+                                                      </ul>
+                                                      <ul class="column">
+                                                       <li id="112">Lebanon</li>      
+                                                        <li id="113">Lesotho</li>      
+                                                        <li id="114">Liberia</li>      
+                                                        <li id="115">Libya</li>
+                                                        <li id="34">Liechtenstein</li>
+                                                        <li id="35">Lithuania</li>
+                                                        <li id="36">Luxembourg</li>
+                                                        <li id="116">Macau</li>
+                                                        <li id="37">Macedonia</li>
+                                                        <li id="117">Madagascar</li>
+                                                        <li id="118">Malawi</li>
+                                                        <li id="120">Maldives</li>
+                                                        <li id="121">Mali</li>
+                                                        <li id="57">Malta</li>
+                                                        <li id="122">Mauritania</li>
+                                                        <li id="123">Mauritius</li>
+                                                        <li id="267">Moldova</li>
+                                                        <li id="221">Monaco</li>
+                                                        <li id="126">Mongolia</li>
+                                                        <li id="268">Montenegro</li>
+                                                        <li id="40">Morocco</li>
+                                                        <li id="127">Mozambique</li>
+                                                        <li id="129">Namibia</li>
+                                                        <li id="130">Nauru</li>
+                                                        <li id="131">Nepal</li>
+                                                        <li id="41">Netherlands</li>
+                                                        <li id="133">Niger</li>
+                                                        <li id="134">Nigeria</li>
+                                                        <li id="42">Norway</li>
+                                                        <li id="139">Oman</li>
+                                                        <li id="140">Pakistan</li>
+                                                        <li id="43">Poland</li>
+                                                        <li id="44">Portugal</li>
+                                                        <li id="145">Qatar</li>
+                                                        <li id="45">Romania</li>
+                                                      </ul>
+                                                      <ul class="column">
+                                                        <li id="270">Russia</li>      
+                                                        <li id="147">Rwanda</li>      
+                                                        <li id="47">San Marino</li>      
+                                                        <li id="150">Saudi Arabia</li>      
+                                                        <li id="151">Senegal</li>
+                                                        <li id="271">Serbia</li>
+                                                        <li id="152">Seychelles</li>
+                                                        <li id="153">Sierra Leone</li>
+                                                        <li id="49">Slovakia</li>
+                                                        <li id="50">Slovenia</li>
+                                                        <li id="156">Somalia</li>
+                                                        <li id="157">South Africa</li>
+                                                        <li id="272">South Korea</li>
+                                                        <li id="58">Spain</li>
+                                                        <li id="158">Sri Lanka</li>
+                                                        <li id="159">Sudan</li>
+                                                        <li id="161">Swaziland</li>
+                                                        <li id="51">Sweden</li>
+                                                        <li id="52">Switzerland</li>
+                                                        <li id="162">Syria</li>
+                                                        <li id="163">Taiwan</li>
+                                                        <li id="164">Tajikistan</li>
+                                                        <li id="165">Tanzania</li>
+                                                        <li id="167">Togo</li>
+                                                        <li id="53">Tunisia</li>
+                                                        <li id="59">Turkey</li>
+                                                        <li id="169">Turkmenistan</li>
+                                                        <li id="171">Uganda</li>
+                                                        <li id="54">Ukraine</li>
+                                                        <li id="172">United Arab Emirates</li>
+                                                        <li id="173">Uzbekistan</li>
+                                                        <li id="273">Vatican City</li>
+                                                        <li id="178">Yemen</li>
+                                                        <li id="179">Zambia</li>
+                                                        <li id="180">Zimbabwe</li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                                  <div class="group">
+                                                    <div class="group-label region-3"><span>UK, Ireland, Hong Kong, Singapore &amp; Sth East Asia</span></div>
+                                                    <div class="columns">
+                                                      <ul class="column">
+                                                        <li id="71">Brunei</li>
+                                                        <li id="74">Cambodia</li>
+                                                        <li id="88">East Timor</li>
+                                                        <li id="1">England</li>
+                                                        <li id="274">Federated States of Micronesia</li>
+                                                        <li id="99">Hong Kong</li>
+                                                      </ul>
+                                                      <ul class="column">
+                                                        <li id="101">Indonesia</li>
+                                                        <li id="287">Ireland, Republic</li>
+                                                        <li id="253">Laos</li>
+                                                        <li id="119">Malaysia</li>
+                                                        <li id="216">Marshall Islands</li>
+                                                        <li id="219">Micronesia</li>
+                                                      </ul>
+                                                      <ul class="column">
+                                                        <li id="254">Myanmar (Burma)</li>
+                                                        <li id="2">Northern Ireland</li>
+                                                        <li id="141">Palau</li>
+                                                        <li id="143">Philippines</li>
+                                                        <li id="3">Scotland</li>
+                                                        <li id="154">Singapore</li>
+                                                      </ul>
+                                                      <ul class="column">
+                                                        <li id="166">Thailand</li>
+                                                        <li id="4">United Kingdom</li>
+                                                        <li id="257">Vietnam</li>
+                                                        <li id="5">Wales</li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                                  <div class="group">
+                                                    <div class="group-label region-4"><span>South Pacific and Norfolk Islands</span></div>
+                                                    <div class="columns">
+                                                      <ul class="column">
+                                                        <li id="181">American Samoa</li>
+                                                        <li id="85">Cook Islands</li>
+                                                        <li id="92">Fiji</li>
+                                                        <li id="207">French Polynesia</li>
+                                                      </ul>
+                                                      <ul class="column">
+                                                        <li id="130">Nauru</li>
+                                                        <li id="132">New Caledonia</li>
+                                                        <li id="136">Norfolk Island</li>
+                                                        <li id="142">Papua New Guinea</li>
+                                                      </ul>
+                                                      <ul class="column">
+                                                        <li id="148">Samoa</li>
+                                                        <li id="155">Solomon Islands</li>
+                                                        <li id="301">Tahiti</li>
+                                                        <li id="168">Tonga</li>
+                                                      </ul>
+                                                      <ul class="column">
+                                                        <li id="170">Tuvalu</li>
+                                                        <li id="174">Vanuatu</li>
+                                                        <li id="260">Western Samoa</li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>-->
+                                                  <div class="group">
+                                                    <div class="group-label region-2"><span>Australia</span></div>
+                                                    <div class="columns">
+                                                      <ul class="column">
+                                                        <li id="170">Australia</li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                                  <div class="group">
+                                                    <div class="group-label region-3"><span>New Zealand</span></div>
+                                                    <div class="columns">
+                                                      <ul class="column">
+                                                        <li id="170">New Zealand</li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                                </div>  
+                                            
+                                            </div>
+                                            <!--Country Display-->
+                                            
+                                        	<!--Revised Country/Region Functionality - Added/Changed 11/5/13-->                                       
+                                        </li>                                                                 
+                                        <li>
+                                            <label for="departureDateDisplay">Departing</label>
+                                            <input type="text" name="departureDateDisplay" id="departureDateDisplay" value="depart" />
+                                            <a href="#help2" class="help">?</a> 
+                                        </li>
+                                        <li>
+                                            <label for="returnDateDisplay">Returning</label>                                          
+                                            <input type="text" name="returnDateDisplay" id="returnDateDisplay" value="return" />
+                                            <a href="#help2" class="help">?</a>                                             
+                                        </li>                                       
+                                        <li class="ageTravellers" id="travellerChildren">
+                                            <fieldset>
+                                                <legend>ages of travellers <a href="#help3" class="help">?</a></legend>
+                                                <ul>
+                                                    <li>
+                                                        <label for="travelerAge_1">1</label>
+                                                        <input id="travelerAge_1" name="travelerAge_1" type="text" autocomplete="off" value="" maxlength="3" />
+                                                    </li>
+                                                    <li> 
+                                                        <label for="travelerAge_2">2</label>
+                                                        <input id="travelerAge_2" name="travelerAge_2" type="text" autocomplete="off" value="" maxlength="3" />
+                                                    </li>
+                                                    <li>
+                                                        <label for="travelerAge_3">3</label>
+                                                        <input id="travelerAge_3" name="travelerAge_3" type="text" autocomplete="off" value="" maxlength="3" />
+                                                    </li>
+                                                    <li>
+                                                        <label for="travelerAge_4">4</label>
+                                                        <input id="travelerAge_4" name="travelerAge_4" type="text" autocomplete="off" value="" maxlength="3" />
+                                                    </li>
+                                                    <li>
+                                                        <label for="travelerAge_5">5</label>
+                                                        <input id="travelerAge_5" name="travelerAge_5" type="text" autocomplete="off" value="" maxlength="3" />
+                                                    </li>
+                                                    <li>
+                                                        <label for="travelerAge_6">6</label>
+                                                        <input id="travelerAge_6" name="travelerAge_6" type="text" autocomplete="off" value="" maxlength="3" />
+                                                    </li>
+                                                </ul>
+                                            </fieldset>
+                                        </li>
+                                        <li class="nzResidents">
+                                            <fieldset>
+                                                <legend>all live in new zealand? <a href="#help3" class="help">?</a></legend>
+                                                <ul>
+                                                	<li>
+                                                        <label for="isResident_0">Yes</label>
+                                                        <input type="radio" name="isResident" id="isResident_0" value="Yes" />
+                                                    </li>
+                                                	<li>
+                                                        <label for="isResident_1">No</label>
+                                                        <input type="radio" name="isResident" id="isResident_1" value="No" />
+                                                    </li>                                                    
+                                                </ul>
+                                            </fieldset>
+                                        </li>
+                                    </ol>
+                                    
+                                    <div class="buttonWell">
+                                        <input type="submit" name="getQuote" value="Get Quote" class="btnSubmit" id="btnSubmit" />
+                                    </div>
+                                    
+                                </div>
+                            </form>                        
+                        
+                        </div>
+                        
+                    	<!--User Content-->                        
+                      
+                    </div>
+                </article>
+                <!--Article-->
+
+            </div>
+            <!--Inner Container-->
+
+        </div>
+        <!--Container-->
+        
+      
+               
+    
+        <!--JavaScript Calls-->  
+		<script src="library/jquery-1.10.2.min.js" type="text/javascript"></script>             
+        <script src="js/utility.js" type="text/javascript"></script> 
+        <script src="js/home.js" type="text/javascript"></script>         
+        <!--JavaScript Calls-->
+       
+    </body>
+</html>

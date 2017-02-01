@@ -1,0 +1,88 @@
+/* Begin Datepicker Overrides */
+
+.datepickerHolder { position: relative; width: 100%; margin: 0; }
+  .datepickerHolder li:after { content: ""; position: absolute; left: 10px; display: inline-block; width: 0; height: 0; margin-top: -8px; border: 13px solid transparent; border-bottom: 13px solid transparent; }
+  .datepickerHolder li.selected:after { border-bottom-color: #0ba3b1; }
+
+.calendarDate { display: none; }
+
+.ui-datepicker { position: absolute; z-index: 10; width: 100% !important; max-width: 365px /*450px*/; min-width: 272px; margin: 17px 0 0; padding: 0; 
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eaeaea+0,eaeaea+45,e2e2e2+48,e2e2e2+52,eaeaea+55,eaeaea+100 */
+    background: #eaeaea; /* Old browsers */
+    background: -webkit-linear-gradient(left,  #eaeaea 0%,#eaeaea 45%,#e2e2e2 49%,#e2e2e2 51%,#eaeaea 55%,#eaeaea 100%);
+    background: linear-gradient(to right,  #eaeaea 0%,#eaeaea 45%,#e2e2e2 49%,#e2e2e2 51%,#eaeaea 55%,#eaeaea 100%);
+ 
+  border: 0; border-radius: 2px; box-shadow: 0 8px 14px -3px rgba(0,0,0,0.12); box-sizing: border-box; }
+
+
+  /* Double Calendars */
+  .ui-datepicker-multi-2 .ui-datepicker-group { width: 100%; }
+
+  .ui-datepicker .ui-datepicker-header { height: 47px; padding: 15px 0 0; margin: 0; background: #0ba3b1; border: 0; border-radius: 0; color: #fff; box-sizing: border-box; } 
+
+  .ui-datepicker .ui-datepicker-title { margin: 0; padding: 0; font-weight: normal; font-size: 1.25rem; line-height: 1; font-family: "Gill Sans Bold"; }
+
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { background: transparent none; border: 0; text-align: center; }  
+
+  .ui-datepicker-header .ui-state-hover { background: transparent none; border: 0; }
+  .ui-datepicker a.ui-state-default.ui-state-active, .ui-datepicker a.ui-state-default.ui-state-highlight.ui-state-active, .ui-datepicker a.ui-state-default.ui-state-active.ui-state-hover { background: #fff; border: 1px solid #fcefa1; font-weight: normal; color: #6e6e6e; }
+  .ui-datepicker a.ui-state-default.ui-state-hover { background: #0ba3b1; font-weight: bold; color: #fff; -webkit-transition: all .15s ease-in; -moz-transition: all .15s ease-in; transition: all .15s ease-in; }
+
+.ui-datepicker-calendar { width: 100% !important; margin: 0 !important; padding: 0; background: #fff; }
+    .ui-datepicker td a, .ui-datepicker td span { display: block; width: auto; height: 36px; padding-top: 11px; color: #6e6e6e; text-align: center; box-sizing: border-box; }
+    .ui-datepicker td a { color: #6e6e6e; }    
+  .ui-datepicker th, .ui-datepicker td { padding: 0; font-size: 0.9375rem; line-height: 1; text-align: center; }
+  .ui-datepicker th { padding: 8px 0; font-weight: normal; color: #fff; }
+  .ui-datepicker td { border: 1px solid #e1e1e1; }
+  .ui-datepicker thead th { background: #666; }
+  td.ui-state-disabled { opacity: 1.0; }
+
+
+/* Input Focuses */
+#departureDate, #returnDate { padding-left: 45px; background: #fefefe url(../files/images/backgrounds/bkg-departure.png) no-repeat 10px 50%; }
+#returnDate { background-image: url(../files/images/backgrounds/bkg-return.png);}
+
+  .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next { width: 2.8em; margin-top: 7px; cursor: pointer; }
+  .ui-datepicker .ui-datepicker-prev { left: 0; top: 0; }
+  .ui-datepicker .ui-datepicker-next { right: 0; top: 0; }
+
+    .ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span { width: 12px; height: 19px; margin-left: -4px; background-size: 12px 19px !important; }
+    .ui-datepicker .ui-datepicker-next span { margin-top: -7px; }
+  .ui-icon-circle-triangle-e { background: url(../files/images/buttons/btn-calendar-next.png) no-repeat !important; }
+  .ui-icon-circle-triangle-w { background: url(../files/images/buttons/btn-calendar-prev.png) no-repeat !important; }
+  .ui-datepicker .ui-datepicker-prev-hover { left: 0; top: 0; }
+  .ui-datepicker .ui-datepicker-next-hover { right: 0; top: 0; }
+
+
+/* 
+  Large Phone/Small Tablet - 640px/40em
+-----------------------------*/
+@media screen and (min-width: 40em) {
+ 
+	.ui-datepicker { width: 620px !important; max-width: none; }
+     .ui-datepicker th { padding: 8px; } 
+    .ui-datepicker-multi-2 .ui-datepicker-group { width: 48.5%; }
+
+       .ui-datepicker-multi .ui-datepicker-group-last { float: right !important; }  
+       .ui-datepicker .ui-datepicker-group-last .ui-datepicker-header { margin: 0 0 0 -3.2%; }    
+        .ui-datepicker .ui-datepicker-header { margin: 0 -3.2% 0 0; }
+}
+
+/* 
+  Tablet/iPad - 48em/768px
+-----------------------------*/   
+@media screen and (min-width: 48em) {
+
+  /* Double Calendars */
+  .ui-datepicker { right: 0; width: 620px !important; }
+
+}
+
+/* 
+  Desktop - 1024px/64em
+-----------------------------*/
+@media screen and (min-width: 64em) {
+
+
+}
