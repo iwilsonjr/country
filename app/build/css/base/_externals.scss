@@ -1,0 +1,82 @@
+/*
+Country Selector UI
+--------------------------------------------*/
+
+
+/*
+
+Site Styles
+--------------------------------------------*/
+
+
+/* 
+  Body
+-----------------------------*/
+
+body {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.4285;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+
+/* 
+  Quote Area - Exterior Container Styling (Modify As Needed)
+-----------------------------*/
+
+.quoteWidget {
+    width: 360px;
+    height: 250px;
+    margin: 20px 0 0 20px;
+    padding: 47px 10px 10px;
+    background: #fff;
+    border: 1px solid #666;
+}
+
+.quoteWidget ul,
+.quoteWidget ol {
+    list-style: none outside none;
+    margin: 0 0 5px 10px;
+    padding: 0;
+}
+
+.quoteWidget ol>li {
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    min-height: 20px;
+    margin: 0;
+    padding: 0 0 10px;
+}
+
+.quoteWidget .buttonWell {
+    float: right;
+    margin: 120px 35px 0 0;
+}
+
+
+/* Small Screen Mobile/Tablet */
+
+@media only screen and (max-width: 980px) {
+    body {
+        min-width: 320px;
+    }
+    input[type='text'] {
+        font-size: 16px;
+        font-size: 1.6rem;
+    }
+    /* 
+    Quote Area - Exterior Container Styling (Modify As Needed)
+  -----------------------------*/
+    .quoteWidget {
+        width: 275px;
+        height: 285px;
+        margin: 20px 0 30px 10px;
+        padding: 47px 10px 10px;
+    }
+    .quoteWidget ul,
+    .quoteWidget ol {
+        margin: 0 0 5px 0px;
+    }
+}

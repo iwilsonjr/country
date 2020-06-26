@@ -1,0 +1,19 @@
+@function calculateLH($size, $lineSpacing) {
+    $lhCalc: $lineSpacing / $size;
+    @return $lhCalc;
+}
+
+@mixin lineHeight($size, $lineSpacing) {
+    line-height: calculateLH($size, $lineSpacing);
+}
+
+$defaultFontSize: 10px/16px * 100%;
+
+/* File Path Constants */
+
+$assets: "/wp-content/themes/charles-child/images";
+$typestack: "Arial, sans-serif";
+
+/* Breakpoints */
+
+$desktop: (980px/16px) * 1em;

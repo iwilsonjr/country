@@ -1,0 +1,128 @@
+/* Desktop */
+
+@media only screen and (min-width: 980px) {
+    /* Display Field */
+    .ui-countryselector .closeWindow {
+        top: -73px;
+        left: 13px;
+        width: 22px;
+        height: 19px;
+        font-size: 1.3rem;
+    }
+    /* Display Grid */
+    .ui-countryselector {
+        top: 70px;
+        width: 925px;
+        height: 386px;
+        min-height: 0;
+        margin-left: -13px;
+        padding-top: 58px;
+    }
+    .ui-countryselector .groups-container {
+        height: 385px;
+        background: transparent url(../files/images/backgrounds/bkg-nav-regions.png) no-repeat;
+        background-size: 170px 390px;
+        border-top-color: #ddd;
+        font-size: 1.2rem;
+    }
+    /* Region/Country Grouping */
+    .ui-countryselector .group {
+        position: absolute;
+        left: 170px;
+        width: 730px;
+    }
+    .ui-countryselector .group-label {
+        position: absolute;
+        display: block;
+        margin-left: -170px;
+        width: 170px;
+        height: 34px;
+        border-bottom: 1px solid #b1b1b1;
+    }
+    .ui-countryselector .group-label strong {
+        float: left;
+        width: 150px;
+        height: 22px;
+        padding: 12px 20px 0 10px;
+        background: transparent none;
+        font-weight: normal;
+        font-size: 1.1rem;
+        line-height: 1.2;
+        color: #292929;
+        text-shadow: 1px 1px 1px white;
+        box-sizing: border-box;
+    }
+    .ui-countryselector .group input[type="radio"]:checked+.group-label {
+        background: #fff;
+    }
+    .ui-countryselector .group input[type="radio"]:checked+.group-label strong {
+        background-position: -70px 0;
+        font-weight: bold;
+        text-shadow: none;
+    }
+    /* Columns */
+    .ui-countryselector .column {
+        position: relative;
+        z-index: 10;
+        float: left;
+        width: 165px;
+        margin: 0 0 0 10px;
+    }
+    .ui-countryselector .column li {
+        margin: 0;
+        padding: 0;
+    }
+    .ui-countryselector .column label {
+        height: 35px;
+        padding: 10px 0 0 20px;
+        border: 0;
+        border-radius: 3px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    .ui-countryselector .column label:hover,
+    .ui-countryselector .column label:focus,
+    .ui-countryselector .column label:active {
+        background: #ccc;
+        color: #000;
+    }
+    input[type="radio"]+label~div.columns {
+        overflow: auto;
+    }
+    input[type="radio"]:checked+label~div.columns {
+        float: left;
+        height: 360px;
+        padding-top: 10px;
+    }
+    /* Region Positioning */
+    .region-1 {
+        top: 0px;
+    }
+    .region-2 {
+        top: 35px;
+    }
+    .region-3 {
+        top: 70px;
+    }
+    .region-4 {
+        top: 105px;
+    }
+    .region-5 {
+        top: 140px;
+    }
+    .region-6 {
+        top: 175px;
+    }
+    .region-7 {
+        top: 210px;
+    }
+    .region-8 {
+        top: 245px;
+    }
+    .region-9 {
+        top: 280px;
+    }
+    .region-10 {
+        top: 315px;
+    }
+}

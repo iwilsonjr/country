@@ -1,160 +1,120 @@
-// getMobileOS - written by Jim Bergman - PUBLIC DOMAIN - v1.00 2012-Nov-24
-var mobileOS;var mobileOSver;function getMobileOS(){var e=navigator.userAgent;var t;if(e.match(/iPad/i)||e.match(/iPhone/i)){mobileOS="iOS";t=e.indexOf("OS ")}else if(e.match(/Android/i)){mobileOS="Android";t=e.indexOf("Android ")}else{mobileOS="unknown"}if(mobileOS==="iOS"&&t>-1){mobileOSver=e.substr(t+3,3).replace("_",".")}else if(mobileOS==="Android"&&t>-1){mobileOSver=e.substr(t+8,3)}else{mobileOSver="unknown"}}
+$(document).ready(function() {
+    //Start JQuery Code
 
-//Initialization
-getMobileOS();
-var androidFlag = "";
+    //Country Selection - List
+    $(".column label").on("click", function() {
+        $("#country").val($(this).text());
+        $(".ui-countryselector").fadeOut("300").attr("hidden", "hidden");
+        $("#country").removeAttr("disabled");
+        $("#selector").removeClass("openCountry");
+    })
 
-$(document).ready(function(){
-//Start JQuery Code
+    //Closing UI
+    $(".closeWindow").on("click", function() {
+        $(".ui-countryselector").fadeOut("300").attr("hidden", "hidden");
+        $("#selector").removeClass("openCountry");
+        $("#country").removeAttr("disabled");
+        return false;
+    })
 
-//Android Detection
-if (mobileOS == "Android") {
-	if (parseInt(mobileOSver) < 3) {
-		$(".countryDisplay").addClass("android-2");	
-		androidFlag = "android-2";
-	} else {
-		$(".countryDisplay").addClass("android");
-		androidFlag = "android";			
-	}
-}
+    //Default Loading
+    if ($("[name='destinationCountryID']:checked").length > 0) {
+        $("#country").val($("[name='destinationCountryID']:checked").siblings("label").text());
+    }
+
+    //Opening UI
+    $("#selector").on("click", function() {
+        $(".ui-countryselector").fadeIn("300").removeAttr("hidden");
+        $(this).addClass("openCountry");
+        $("#country").attr("disabled", "disabled");
+
+        $(".columns label").each(function(index) {
+            if ($(this).text() == $("#country").val()) {
+
+                var test = {};
+
+                if (document.body.clientWidth > 980) {
+                    test = $(".columns");
+                } else {
+                    test = $("#groups-container");
+                }
+
+                test.scrollTop(0);
+                test.animate({ scrollTop: $(this).position().top }, 0);
+            }
+        });
 
 
-$(".column label").on("click", function(){
-	$("#country span").empty().append($(this).text());
-	$(".countryDisplay").fadeOut("300").attr("hidden","hidden");	
-	$("#country").removeClass("openCountry");
-	  //IE8 Hack
-	  if (!$.support.opacity) { 
-		$(".column label").removeClass("selectedCountry");	  	
-	  	$(this).addClass("selectedCountry");
-	  }	
-	if (androidFlag == "android-2") { closeDoor(); }
-})
-
-//Closing UI
-$(".closeWindow").on("click", function(){
-	$(".countryDisplay").fadeOut("300").attr("hidden","hidden");	
-	$("#country").removeClass("openCountry");	
-	if (androidFlag == "android-2") { closeDoor(); }
-	return false;	
-})
-
-//Default Loading
-if ($("[name='destinationCountryID']:checked").length > 0) {
-	$("#country span").text($("[name='destinationCountryID']:checked").siblings("label").text());	
-}
-
-//Opening UI
-$("#country").on("click", function(){
-	$(".countryDisplay").fadeIn("300").removeAttr("hidden");
-	$(this).addClass("openCountry");
-	
-	if (androidFlag != "android-2") {	
-
-		$(".columns label").each(function( index ) {
-			if ($(this).text() == $("#country span").text()) {
-
-				var test = {};
-
-				if (document.body.clientWidth > 650) {
-				 		test = $(".columns");						
-					} else {														  	
-					  	test = $("#groups-container");
-				}
-
-				test.scrollTop(0);
-				test.animate({scrollTop: $(this).position().top}, 0);
-			}
-		});
-	} else {
-
-		loaded();
-		if ($("[name='destinationCountryID']:checked").length == 1) {
-		    thisSelection = "#" + $("[name='destinationCountryID']:checked").attr("id");
-		   	newDoor(thisSelection);	
-	   	}	
-
-	}
-
-})
+    });
 
 
 
-	$(".group-label").on("click", function(){		
-
-		$("[name='destinationCountryID']").removeAttr("checked");
-		$("#country span").empty();
-
-		if (androidFlag == "android-2") {
-			closeDoor();
-			
-		    $(".columns").removeClass("openList");  
-		    $(this).siblings(".columns").addClass("openList");
-
-			loaded();
-		    thisSelection = "#" + $(this).attr("for");
-		    newDoor(thisSelection);
-
-		} else {
-
-			if (document.body.clientWidth < 650) {
-
-				thisTop = $(this).position().top;
-				setTimeout(function(){
-						$("#groups-container").scrollTop(thisTop);
-				}, 50);
-			}
-
-		}
-
-	});	
 
 
-  //IE8 Hack
-  if (!$.support.opacity) { 
-   $("#country, .countryDisplay").addClass("ie8");
+    //Region Selection - List
+    $(".group-label").on("click", function() {
 
-	$(".group-label").on("click", function(){
-	    $(".columns").removeClass("openList");  
-	    $(this).siblings(".columns").addClass("openList");
-	});		
-  }  
+        $("[name='destinationCountryID']").removeAttr("checked");
+        $("#country").val("");
 
-//End JQuery Code
+        if (document.body.clientWidth < 980) {
+
+            regionID = $("#" + $(this).attr("for"));
+            if (regionID.prop("checked")) {
+                regionID.prop("checked", false);
+                return false;
+            }
+
+        } else {
+
+            thisTop = $(this).position().top;
+            setTimeout(function() {
+                $("#groups-container").scrollTop(thisTop);
+            }, 50);
+        }
+
+    });
+
+    //AutoComplete
+    /* var data = [];
+
+    $(".quoteWidget .column label").each(function( index, value ){
+        data[index] = $(this).text();           
+    });
+
+    var data2 = ["Australia","Indonesia","New Zealand","Thailand","United States of America"]; //Popular Destinations
+
+	$("#country").autocomplete({
+	    source: function(request, response) {
+
+            if ((request.term || '').length <= 0) {
+				results = $.ui.autocomplete.filter(data2, request.term); */
+    /* Initial - Popular */
+    /*$("#autoCountry").addClass("popular");           
+            } else {
+				results = $.ui.autocomplete.filter(data, request.term); */
+    /* Autocomplete - Search */
+    /* $("#autoCountry").removeClass("popular");
+			}  	        
+  	        response(results);
+
+	    },
+		autoFocus: true,
+		minLength: 0,
+		focus: function() {
+			$(this).autocomplete("widget")
+			.appendTo("#autoCountry");
+		},
+        response: function(event, ui) {
+            if (!ui.content.length) {
+                var noResult = { value:"",label:"No results found" };
+                ui.content.push(noResult);
+            }
+        }   			
+	}).focus(function(){     
+		$(this).autocomplete("search");
+    });*/
+
+
+    //End JQuery Code
 });
-
-
-
-//Android 2.3
-if (androidFlag == "android-2") {
-
-	var myScroll;
-
-	function loaded () {
-	    myScroll = new IScroll('#wrapper', {
-	        scrollbars: true,
-	        interactiveScrollbars: true,
-			invertWheelDirection: true           
-	    });
-	}
-
-	function newDoor(index) {	
-		setTimeout(function(){
-			myScroll.refresh(); 
-		}, 100);
-		myScroll.scrollToElement(index, 250); 
-	}
-
-	function closeDoor(){
-		myScroll.destroy()
-		myScroll = null;
-	}
-
-	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);	
-
-}
-
-
-
-   
