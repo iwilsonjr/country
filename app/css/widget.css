@@ -77,7 +77,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */ }
 
 /**
@@ -367,7 +368,7 @@ label {
 
 input[type="text"] {
   margin-bottom: 0;
-  padding: 3px 5px;
+  padding: 0.3rem 0.5rem;
   border: 2px solid #ccc;
   font-size: 15px;
   font-size: 1.5rem;
@@ -406,7 +407,7 @@ input:-moz-placeholder {
   overflow: hidden;
   width: 1px;
   height: 1px;
-  margin: 0 -1px -1px 0;
+  margin: 0 -0.1rem -0.1rem 0;
   border: 0;
   font-size: 0;
   line-height: 0; }
@@ -440,15 +441,15 @@ body {
 .quoteWidget {
   width: 360px;
   height: 250px;
-  margin: 20px 0 0 20px;
-  padding: 47px 10px 10px;
+  margin: 2rem 0 0 2rem;
+  padding: 4.7rem 1rem 1rem;
   background: #fff;
   border: 1px solid #666; }
 
 .quoteWidget ul,
 .quoteWidget ol {
   list-style: none outside none;
-  margin: 0 0 5px 10px;
+  margin: 0 0 0.5rem 1rem;
   padding: 0; }
 
 .quoteWidget ol > li {
@@ -457,11 +458,11 @@ body {
   width: 100%;
   min-height: 20px;
   margin: 0;
-  padding: 0 0 10px; }
+  padding: 0 0 1rem; }
 
 .quoteWidget .buttonWell {
   float: right;
-  margin: 120px 35px 0 0; }
+  margin: 12rem 3.5rem 0 0; }
 
 /* Small Screen Mobile/Tablet */
 @media only screen and (max-width: 980px) {
@@ -476,11 +477,11 @@ body {
   .quoteWidget {
     width: 275px;
     height: 285px;
-    margin: 20px 0 30px 10px;
-    padding: 47px 10px 10px; }
+    margin: 2rem 0 3rem 1rem;
+    padding: 4.7rem 1rem 1rem; }
   .quoteWidget ul,
   .quoteWidget ol {
-    margin: 0 0 5px 0px; } }
+    margin: 0 0 0.5rem 0; } }
 
 /*
 Country Selector UI
@@ -495,7 +496,7 @@ Country Selector UI
   overflow-x: hidden;
   overflow-y: scroll;
   height: 200px;
-  margin: 35px 0 0;
+  margin: 3.5rem 0 0;
   padding: 0;
   box-sizing: border-box; }
 
@@ -515,7 +516,7 @@ Country Selector UI
 .quoteWidget .ui-menu button:active {
   width: 100%;
   height: 30px;
-  padding: 0 0 0 30px;
+  padding: 0 0 0 3rem;
   background: transparent none !important;
   border: 0 !important;
   box-sizing: border-box;
@@ -529,7 +530,7 @@ Country Selector UI
 
 /* Popular */
 .popular .ui-autocomplete {
-  padding-top: 10px; }
+  padding-top: 1rem; }
 
 .popular .ui-autocomplete:before {
   content: "Popular Destinations";
@@ -554,7 +555,7 @@ Country Selector UI
   width: 100%;
   height: 34px;
   margin: 0;
-  padding: 5px 35px 0 89px;
+  padding: 0.5rem 3.5rem 0 8.9rem;
   border: 2px solid #ccc;
   font-size: 1.6rem;
   color: #000;
@@ -569,7 +570,7 @@ label[for="country"] {
   left: 11px;
   z-index: 6;
   width: 70px;
-  margin: 1px 0 -20px;
+  margin: 0.1rem 0 -2rem;
   font-size: 1.5rem;
   cursor: default; }
 
@@ -581,7 +582,7 @@ label[for="country"] {
   float: right;
   width: 22px;
   height: 22px;
-  margin: 6px 0 0 -28px;
+  margin: 0.6rem 0 0 -2.8rem;
   background: url(../files/images/backgrounds/bkg-country.png) no-repeat 50% 50%;
   background-size: 22px auto;
   border: 0;
@@ -601,7 +602,7 @@ label[for="country"] {
   width: 60px;
   height: 30px;
   margin: 0 0 0;
-  padding: 3px 0 0;
+  padding: 0.3rem 0 0;
   background: #000;
   font-size: 18px;
   font-size: 1.8rem;
@@ -623,8 +624,8 @@ label[for="country"] {
   display: none;
   width: 282px;
   height: 200px;
-  margin: -13px 0 0 -4px;
-  padding: 45px 0 0;
+  margin: -1.3rem 0 0 -0.4rem;
+  padding: 4.5rem 0 0;
   background: #fff;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
   border: 1px solid #ccc; }
@@ -667,7 +668,7 @@ label[for="country"] {
 .ui-countryselector .group-label strong {
   display: block;
   height: 49px;
-  padding: 15px 15px 0;
+  padding: 1.5rem 1.5rem 0;
   background: #fff none;
   font-weight: normal;
   font-size: 1.6rem;
@@ -705,13 +706,13 @@ input[type="radio"]:checked + label ~ div.columns {
   padding: 0; }
 
 .ui-countryselector .column input[type="radio"] {
-  margin-left: 20px;
+  margin-left: 2rem;
   z-index: 1; }
 
 .ui-countryselector .column label {
   height: 50px;
   margin: 0;
-  padding: 13px 15px 0 25px;
+  padding: 1.3rem 1.5rem 0 2.5rem;
   border-bottom: 1px solid #b1b1b1;
   border-radius: 0;
   font-size: 1.5rem;
@@ -744,8 +745,8 @@ input[type="radio"]:checked + label ~ div.columns {
     width: 925px;
     height: 386px;
     min-height: 0;
-    margin-left: -13px;
-    padding-top: 58px; }
+    margin-left: -1.3rem;
+    padding-top: 5.8rem; }
   .ui-countryselector .groups-container {
     height: 385px;
     background: transparent url(../files/images/backgrounds/bkg-nav-regions.png) no-repeat;
@@ -760,7 +761,7 @@ input[type="radio"]:checked + label ~ div.columns {
   .ui-countryselector .group-label {
     position: absolute;
     display: block;
-    margin-left: -170px;
+    margin-left: -17rem;
     width: 170px;
     height: 34px;
     border-bottom: 1px solid #b1b1b1; }
@@ -768,7 +769,7 @@ input[type="radio"]:checked + label ~ div.columns {
     float: left;
     width: 150px;
     height: 22px;
-    padding: 12px 20px 0 10px;
+    padding: 1.2rem 2rem 0 1rem;
     background: transparent none;
     font-weight: normal;
     font-size: 1.1rem;
@@ -788,13 +789,13 @@ input[type="radio"]:checked + label ~ div.columns {
     z-index: 10;
     float: left;
     width: 165px;
-    margin: 0 0 0 10px; }
+    margin: 0 0 0 1rem; }
   .ui-countryselector .column li {
     margin: 0;
     padding: 0; }
   .ui-countryselector .column label {
     height: 35px;
-    padding: 10px 0 0 20px;
+    padding: 1rem 0 0 2rem;
     border: 0;
     border-radius: 3px;
     font-size: 1.2rem;
@@ -809,7 +810,7 @@ input[type="radio"]:checked + label ~ div.columns {
   input[type="radio"]:checked + label ~ div.columns {
     float: left;
     height: 360px;
-    padding-top: 10px; }
+    padding-top: 1rem; }
   /* Region Positioning */
   .region-1 {
     top: 0px; }
