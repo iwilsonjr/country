@@ -10,12 +10,12 @@ $(document).ready(function() {
     })
 
     //Closing UI
-    $(".closeWindow").on("click", function() {
+    /*$(".closeWindow").on("click", function() {
         $(".ui-countryselector").fadeOut("300").attr("hidden", "hidden");
         $("#selector").removeClass("openCountry");
         $("#country").removeAttr("disabled");
         return false;
-    })
+    })*/
 
     //Default Loading
     if ($("[name='destinationCountryID']:checked").length > 0) {
@@ -23,7 +23,7 @@ $(document).ready(function() {
     }
 
     //Opening UI
-    $("#selector").on("click", function() {
+    /*$("#selector").on("click", function() {
         $(".ui-countryselector").fadeIn("300").removeAttr("hidden");
         $(this).addClass("openCountry");
         $("#country").attr("disabled", "disabled");
@@ -45,7 +45,7 @@ $(document).ready(function() {
         });
 
 
-    });
+    });*/
 
 
 

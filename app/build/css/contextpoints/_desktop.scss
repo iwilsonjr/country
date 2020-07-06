@@ -61,14 +61,14 @@
         text-shadow: none;
     }
     /* Columns */
-    .ui-countryselector .column {
+    /*.ui-countryselector .column {
         position: relative;
         z-index: 10;
-        float: left;
         width: 165px;
         margin: 0 0 0 10px;
-    }
-    .ui-countryselector .column li {
+    }*/
+    .ui-countryselector .columns li {
+        flex-basis: 1 1 165px;
         margin: 0;
         padding: 0;
     }
@@ -89,8 +89,14 @@
     input[type="radio"]+label~div.columns {
         overflow: auto;
     }
-    input[type="radio"]:checked+label~div.columns {
-        float: left;
+    /*input[type="radio"]:checked+label~.columns {
+        display: flex;
+        flex-flow: column nowrap;
+        position: static;
+        height: auto;
+    }*/
+    input[type="radio"]:checked+label~.columns {
+        flex-flow: column wrap;
         height: 360px;
         padding-top: 10px;
     }

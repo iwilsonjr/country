@@ -8,39 +8,37 @@ $(document).ready(function () {
     $("#selector").removeClass("openCountry");
   }); //Closing UI
 
-  $(".closeWindow").on("click", function () {
-    $(".ui-countryselector").fadeOut("300").attr("hidden", "hidden");
-    $("#selector").removeClass("openCountry");
-    $("#country").removeAttr("disabled");
-    return false;
-  }); //Default Loading
+  /*$(".closeWindow").on("click", function() {
+      $(".ui-countryselector").fadeOut("300").attr("hidden", "hidden");
+      $("#selector").removeClass("openCountry");
+      $("#country").removeAttr("disabled");
+      return false;
+  })*/
+  //Default Loading
 
   if ($("[name='destinationCountryID']:checked").length > 0) {
     $("#country").val($("[name='destinationCountryID']:checked").siblings("label").text());
   } //Opening UI
 
+  /*$("#selector").on("click", function() {
+      $(".ui-countryselector").fadeIn("300").removeAttr("hidden");
+      $(this).addClass("openCountry");
+      $("#country").attr("disabled", "disabled");
+       $(".columns label").each(function(index) {
+          if ($(this).text() == $("#country").val()) {
+               var test = {};
+               if (document.body.clientWidth > 980) {
+                  test = $(".columns");
+              } else {
+                  test = $("#groups-container");
+              }
+               test.scrollTop(0);
+              test.animate({ scrollTop: $(this).position().top }, 0);
+          }
+      });
+    });*/
+  //Region Selection - List
 
-  $("#selector").on("click", function () {
-    $(".ui-countryselector").fadeIn("300").removeAttr("hidden");
-    $(this).addClass("openCountry");
-    $("#country").attr("disabled", "disabled");
-    $(".columns label").each(function (index) {
-      if ($(this).text() == $("#country").val()) {
-        var test = {};
-
-        if (document.body.clientWidth > 980) {
-          test = $(".columns");
-        } else {
-          test = $("#groups-container");
-        }
-
-        test.scrollTop(0);
-        test.animate({
-          scrollTop: $(this).position().top
-        }, 0);
-      }
-    });
-  }); //Region Selection - List
 
   $(".group-label").on("click", function () {
     $("[name='destinationCountryID']").removeAttr("checked");
