@@ -11,6 +11,7 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify-es').default;
 const csscomb = require('gulp-csscomb');
 const del = require("del");
+const sourcemaps = require('gulp-sourcemaps');
 
 const processors = [
     pxtorem({
@@ -23,11 +24,13 @@ const processors = [
 ];
 
 function styles() {
-    return gulp.src('app/build/css/*.scss')
+    return gulp.src('app/build/css/**/*.scss')
         .pipe(plumber())
+        .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(postcss(processors))
         .pipe(csscomb())
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.stream());
 }
@@ -53,7 +56,7 @@ function watch() {
             index: "/index.html"
         }
     });
-    gulp.watch('app/build/css/*.*/*.scss', styles)
+    gulp.watch('app/build/css/**/*.scss', styles)
     gulp.watch('app/build/js/widget.js', scripts)
     gulp.watch('app/index.html').on('change', browserSync.reload);
     //gulp.watch('app/js/widget.js').on('change', browserSync.reload);

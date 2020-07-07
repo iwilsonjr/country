@@ -1,13 +1,55 @@
+//Updated Code
+
+const column = document.querySelector(".column label");
+const country = document.getElementById("country");
+const countryselector = document.querySelector(".ui-countryselector");
+const selector = document.getElementById("selector");
+const closeWindow = document.querySelector(".closeWindow");
+
+
+//Opening UI
+selector.addEventListener("click", () => {
+    openUI();
+})
+
+//Country Selection - List
+column.addEventListener("click", () => {
+    country.setAttribute("value", this.text);
+    closeUI();
+})
+
+//Closing UI
+closeWindow.addEventListener("click", (e) => {
+    closeUI();
+    e.preventDefault();
+})
+
+
+function openUI() {
+    countryselector.setAttribute("hidden", "hidden");
+    country.removeAttribute("disabled");
+    selector.classList.remove("openCountry");
+}
+
+function closeUI() {
+    country.setAttribute("disabled", "disabled");
+    selector.classList.add("openCountry");
+}
+
+
+
+
+//jQuery Legacy
 $(document).ready(function() {
     //Start JQuery Code
 
     //Country Selection - List
-    $(".column label").on("click", function() {
+    /*$(".column label").on("click", function() {
         $("#country").val($(this).text());
         $(".ui-countryselector").fadeOut("300").attr("hidden", "hidden");
         $("#country").removeAttr("disabled");
         $("#selector").removeClass("openCountry");
-    })
+    })*/
 
     //Closing UI
     /*$(".closeWindow").on("click", function() {

@@ -4,6 +4,137 @@ External Calls
 /* File Path Constants */
 /* Breakpoints */
 /*
+
+Initialization/Defaults
+--------------------------------------------*/
+/* --- Block Elements --- */
+html {
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	font-size: 62.5%;
+	color: #000;
+}
+
+/* 62.5% = 10px = 1.0rem */
+a img {
+	border: none;
+}
+
+/* --- Block Text --- */
+div {
+	margin: 0;
+}
+
+/* Localize if necessary */
+/* --- Text Elements --- */
+a {
+	color: #000;
+	text-decoration: underline;
+}
+
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+/* --- Form/Inputs --- */
+form {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+legend {
+	color: #000;
+}
+
+label {
+	display: block;
+	font-size: 14px;
+	font-size: 1.4rem;
+	color: #000;
+	cursor: pointer;
+}
+
+input[type='text'] {
+	margin-bottom: 0;
+	padding: 0.3rem 0.5rem;
+	border: 2px solid #ccc;
+	font-size: 15px;
+	font-size: 1.5rem;
+	color: #000;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	vertical-align: middle;
+}
+
+input[type='text'][disabled] {
+	background: #fff;
+}
+
+::-webkit-input-placeholder {
+	color: #000;
+}
+
+::-moz-placeholder {
+	color: #000;
+}
+
+/* firefox 19+ */
+:-ms-input-placeholder {
+	color: #000;
+}
+
+/* ie */
+input:-moz-placeholder {
+	color: #000;
+}
+
+/* 
+     Utility ID's
+     ----------------------- */
+.clear {
+	display: block;
+	clear: both;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	margin: 0 -0.1rem -0.1rem 0;
+	border: 0;
+	font-size: 0;
+	line-height: 0;
+}
+
+.hide,
+.ui-countryselector legend {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	width: 0 !important;
+	height: 0;
+}
+
+/*
 Country Selector UI
 --------------------------------------------*/
 /* Auto Complete */
@@ -55,22 +186,6 @@ Country Selector UI
 	text-decoration: underline;
 }
 
-/* Popular */
-.popular .ui-autocomplete {
-	padding-top: 1rem;
-}
-
-.popular .ui-autocomplete:before {
-	content: 'Popular Destinations';
-	position: relative;
-	top: -5px;
-	display: block;
-	margin: 0;
-	padding: 0;
-	font-weight: bold;
-	font-size: 1.5rem;
-}
-
 /*
   Country/Region Selector 
 -----------------------------*/
@@ -120,8 +235,7 @@ label[for='country'] {
 	border: 0;
 	text-indent: -300px;
 }
-
-.countrySelector.openCountry {
+.countrySelector.countrySelector.openCountry {
 	display: none;
 }
 
@@ -145,7 +259,6 @@ label[for='country'] {
 	text-align: center;
 	text-decoration: none;
 }
-
 .ui-countryselector .closeWindow:hover,
 .ui-countryselector .closeWindow:focus,
 .ui-countryselector .closeWindow:active {
@@ -157,7 +270,6 @@ label[for='country'] {
 	position: absolute;
 	top: 70px;
 	z-index: 4;
-	/*display: none;*/
 	display: block;
 	width: 282px;
 	height: 200px;
@@ -186,20 +298,11 @@ label[for='country'] {
 .ui-countryselector .group {
 	width: 100%;
 }
-
 .ui-countryselector .group.active {
 	z-index: 1000;
 }
 
 /* Labels */
-.ui-countryselector legend {
-	position: absolute;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	width: 0 !important;
-	height: 0;
-}
-
 .ui-countryselector .group-label {
 	margin: 0;
 	width: 100%;
@@ -209,7 +312,6 @@ label[for='country'] {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 }
-
 .ui-countryselector .group-label strong {
 	display: block;
 	height: 49px;
@@ -232,44 +334,37 @@ label[for='country'] {
 }
 
 /* Opening Regions */
-input[type='radio'] + label ~ .columns {
-	/*overflow: hidden;
-    position: absolute;
-    clip: rect(0, 0, 0, 0);
-    width: 100%;
-    height: 0;
-    margin: 0;
-    display: none;*/
+input[type='radio'] + label ~ div.columns {
+	overflow: hidden;
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+	width: 100%;
+	height: 0;
+	margin: 0;
 }
 
-/*input[type="radio"]:checked+label~.columns {*/
-.ui-countryselector .columns {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-flow: column nowrap;
-	    flex-flow: column nowrap;
+input[type='radio']:checked + label ~ div.columns {
 	position: static;
 	height: auto;
 }
 
 /* Columns */
-.ui-countryselector .columns li {
-	-webkit-box-flex: 1;
-	-ms-flex: 1 1 100%;
-	    flex: 1 1 100%;
+.ui-countryselector .column {
+	overflow: hidden;
+	float: none;
+	position: static;
+	display: block;
+	width: 100%;
 	margin: 0;
 	padding: 0;
 }
 
-.ui-countryselector .columns input[type='radio'] {
+.ui-countryselector .column input[type='radio'] {
 	margin-left: 2rem;
 	z-index: 1;
 }
 
-.ui-countryselector .columns label {
+.ui-countryselector .column label {
 	height: 50px;
 	margin: 0;
 	padding: 1.3rem 1.5rem 0 2.5rem;
@@ -289,7 +384,7 @@ input[type='radio'] + label ~ .columns {
 	/*background: #46c8fb none; font-weight: bold;*/
 }
 
-.ui-countryselector .columns input[type='radio']:checked + label {
+.ui-countryselector .column input[type='radio']:checked + label {
 	background: #09c none;
 	color: #fff;
 }
@@ -320,7 +415,6 @@ input[type='radio'] + label ~ .columns {
 		background-size: 170px 390px;
 		border-top-color: #ddd;
 		font-size: 1.2rem;
-		/*overflow: hidden;*/
 	}
 	/* Region/Country Grouping */
 	.ui-countryselector .group {
@@ -359,23 +453,18 @@ input[type='radio'] + label ~ .columns {
 		text-shadow: none;
 	}
 	/* Columns */
-	/*.ui-countryselector .column {
-        position: relative;
-        z-index: 10;
-        width: 165px;
-        margin: 0 0 0 10px;
-    }*/
-	/*.ui-countryselector .columns {
-        width: 720px;
-    }*/
-	.ui-countryselector .columns li {
-		-webkit-box-flex: 1;
-		-ms-flex: 1 1 33.3333%;
-		    flex: 1 1 33.3333%;
+	.ui-countryselector .column {
+		position: relative;
+		z-index: 10;
+		float: left;
+		width: 165px;
+		margin: 0 0 0 1rem;
+	}
+	.ui-countryselector .column li {
 		margin: 0;
 		padding: 0;
 	}
-	.ui-countryselector .columns label {
+	.ui-countryselector .column label {
 		height: 35px;
 		padding: 1rem 0 0 2rem;
 		border: 0;
@@ -383,28 +472,18 @@ input[type='radio'] + label ~ .columns {
 		font-size: 1.2rem;
 		cursor: pointer;
 	}
-	.ui-countryselector .columns label:hover,
-	.ui-countryselector .columns label:focus,
-	.ui-countryselector .columns label:active {
+	.ui-countryselector .column label:hover,
+	.ui-countryselector .column label:focus,
+	.ui-countryselector .column label:active {
 		background: #ccc;
 		color: #000;
 	}
-	/*input[type="radio"]+label~div.columns {
-        overflow: auto;
-    }*/
-	/*input[type="radio"]:checked+label~.columns {*/
-	.ui-countryselector .columns {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		position: static;
-		width: 720px;
-		height: auto;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-ms-flex-flow: column wrap;
-		    flex-flow: column wrap;
-		min-height: 360px;
+	input[type='radio'] + label ~ div.columns {
+		overflow: auto;
+	}
+	input[type='radio']:checked + label ~ div.columns {
+		float: left;
+		height: 360px;
 		padding-top: 1rem;
 	}
 	/* Region Positioning */
@@ -439,3 +518,4 @@ input[type='radio'] + label ~ .columns {
 		top: 315px;
 	}
 }
+/*# sourceMappingURL=widget.css.map */

@@ -3,6 +3,7 @@ External Calls
 --------------------------------------------*/
 
 @import "base/config";
+@import "base/defaults";
 
 /*
 Country Selector UI
@@ -58,24 +59,6 @@ Country Selector UI
 }
 
 
-/* Popular */
-
-.popular .ui-autocomplete {
-    padding-top: 10px;
-}
-
-.popular .ui-autocomplete:before {
-    content: "Popular Destinations";
-    position: relative;
-    top: -5px;
-    display: block;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-
 /*
   Country/Region Selector 
 -----------------------------*/
@@ -128,39 +111,39 @@ label[for="country"] {
     background-size: 22px auto;
     border: 0;
     text-indent: -300px;
-}
-
-.countrySelector.openCountry {
-    display: none;
+    &.countrySelector.openCountry {
+        display: none;
+    }
 }
 
 
 /* Close Window */
 
-.ui-countryselector .closeWindow {
-    overflow: hidden;
-    position: relative;
-    top: -78px;
-    left: 2px;
-    float: right;
-    display: block;
-    width: 60px;
-    height: 30px;
-    margin: 0 0 0;
-    padding: 3px 0 0;
-    background: #000;
-    font-size: 18px;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #fff !important;
-    text-align: center;
-    text-decoration: none;
-}
-
-.ui-countryselector .closeWindow:hover,
-.ui-countryselector .closeWindow:focus,
-.ui-countryselector .closeWindow:active {
-    text-decoration: none;
+.ui-countryselector {
+    .closeWindow {
+        overflow: hidden;
+        position: relative;
+        top: -78px;
+        left: 2px;
+        float: right;
+        display: block;
+        width: 60px;
+        height: 30px;
+        margin: 0 0 0;
+        padding: 3px 0 0;
+        background: #000;
+        font-size: 18px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff !important;
+        text-align: center;
+        text-decoration: none;
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: none;
+        }
+    }
 }
 
 
@@ -170,7 +153,7 @@ label[for="country"] {
     position: absolute;
     top: 70px;
     z-index: 4;
-    display: none;
+    display: block;
     width: 282px;
     height: 200px;
     margin: -13px 0 0 -4px;
@@ -198,21 +181,16 @@ label[for="country"] {
 
 .ui-countryselector .group {
     width: 100%;
-}
-
-.ui-countryselector .group.active {
-    z-index: 1000
+    &.active {
+        z-index: 1000
+    }
 }
 
 
 /* Labels */
 
 .ui-countryselector legend {
-    position: absolute;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    width: 0 !important;
-    height: 0;
+    @extend .hide
 }
 
 .ui-countryselector .group-label {
@@ -222,16 +200,15 @@ label[for="country"] {
     border-bottom: 1px solid #b1b1b1;
     -webkit-user-select: none;
     box-sizing: border-box;
-}
-
-.ui-countryselector .group-label strong {
-    display: block;
-    height: 49px;
-    padding: 15px 15px 0;
-    background: #fff none;
-    font-weight: normal;
-    font-size: 1.6rem;
-    box-sizing: border-box;
+    & strong {
+        display: block;
+        height: 49px;
+        padding: 15px 15px 0;
+        background: #fff none;
+        font-weight: normal;
+        font-size: 1.6rem;
+        box-sizing: border-box;
+    }
 }
 
 .ui-countryselector .group input[type="radio"]:checked+.group-label {
