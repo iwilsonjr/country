@@ -254,11 +254,14 @@ input[type="radio"]+label~.columns {
     clip: rect(0, 0, 0, 0);
     width: 100%;
     height: 0;
-    margin: 0;*/
-    display: none;
+    margin: 0;
+    display: none;*/
 }
 
-input[type="radio"]:checked+label~.columns {
+
+/*input[type="radio"]:checked+label~.columns {*/
+
+.ui-countryselector .columns {
     display: flex;
     flex-flow: column nowrap;
     position: static;
@@ -269,7 +272,7 @@ input[type="radio"]:checked+label~.columns {
 /* Columns */
 
 .ui-countryselector .columns li {
-    flex-basis: 1 1 100%;
+    flex: 1 1 100%;
     margin: 0;
     padding: 0;
 }

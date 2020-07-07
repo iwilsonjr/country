@@ -53,7 +53,7 @@ function watch() {
             index: "/index.html"
         }
     });
-    gulp.watch('app/build/css/*.scss', styles)
+    gulp.watch('app/build/css/*.*/*.scss', styles)
     gulp.watch('app/build/js/widget.js', scripts)
     gulp.watch('app/index.html').on('change', browserSync.reload);
     //gulp.watch('app/js/widget.js').on('change', browserSync.reload);
