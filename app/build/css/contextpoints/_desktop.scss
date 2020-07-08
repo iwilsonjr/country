@@ -64,21 +64,20 @@
     .ui-countryselector .column {
         position: relative;
         z-index: 10;
-        float: left;
-        width: 165px;
-        margin: 0 0 0 10px;
+        column-count: 4;
     }
     .ui-countryselector .column li {
-        margin: 0;
+        margin: 0 0 0 10px;
         padding: 0;
     }
     .ui-countryselector .column label {
-        height: 35px;
-        padding: 10px 0 0 20px;
+        height: auto;
+        padding: 10px 0 10px 20px;
         border: 0;
         border-radius: 3px;
         font-size: 1.2rem;
         cursor: pointer;
+        box-sizing: border-box;
     }
     .ui-countryselector .column label:hover,
     .ui-countryselector .column label:focus,
