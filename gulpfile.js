@@ -30,14 +30,15 @@ function styles() {
         .pipe(sass())
         .pipe(postcss(processors))
         .pipe(csscomb())
-        .pipe(sourcemaps.write('./'))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.stream());
 }
 
 function scripts() {
-    return gulp.src('app/build/js/widget.js')
+    return gulp.src('app/build/js/**/*.js')
         .pipe(plumber())
+        .pipe(sourcemaps.init())
         .pipe(babel({
             presets: [
                 ['@babel/env', {
@@ -45,6 +46,7 @@ function scripts() {
                 }]
             ]
         }))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('app/js'))
         .pipe(browserSync.stream());
 }
@@ -57,7 +59,7 @@ function watch() {
         }
     });
     gulp.watch('app/build/css/**/*.scss', styles)
-    gulp.watch('app/build/js/widget.js', scripts)
+    gulp.watch('app/build/js/**/*.js', scripts)
     gulp.watch('app/index.html').on('change', browserSync.reload);
     //gulp.watch('app/js/widget.js').on('change', browserSync.reload);
 }
@@ -71,7 +73,7 @@ function buildcss() {
 }
 
 function buildjs() {
-    return gulp.src('app/js/widget.js')
+    return gulp.src('app/js/*.js')
         .pipe(plumber())
         .pipe(rename({ extname: '.min.js' }))
         .pipe(uglify())

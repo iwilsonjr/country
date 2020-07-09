@@ -2,10 +2,10 @@
 
 const column = document.querySelectorAll(".column label");
 const country = document.getElementById("country");
-const countryselector = document.querySelector(".ui-countryselector");
+const countrySelector = document.querySelector(".ui-countryselector");
 const selector = document.getElementById("selector");
 const closeWindow = document.querySelector(".closeWindow");
-const checked = document.querySelectorAll("[name='destinationCountryID']:checked");
+const groupLabel = document.querySelectorAll(".group-label");
 
 
 //Opening UI
@@ -17,14 +17,20 @@ selector.addEventListener("click", () => {
 column.forEach((elem) => {
     elem.addEventListener("click", () => {
         country.setAttribute("value", elem.innerText);
+        //let countrySelected = document.querySelector("[name='destinationCountryID']:checked");
+        //countrySelected.checked = true;
+        console.log(elem.getAttribute("for"));
+        // countrySelected.setAttribute("checked", true);
+        document.getElementById(elem.getAttribute("for")).checked = true;
         closeUI();
     })
 });
 
 //Default Loading
-if (cheked.length > 0) {
-    //country.setAttribute("value", checked.).val($("[name='destinationCountryID']:checked").siblings("label").text());
-}
+//if (countrySelected.length > 0) {
+//const countrySelected. 
+//country.setAttribute("value", checked.).val($("[name='destinationCountryID']:checked").siblings("label").text());
+//}
 
 //Closing UI
 closeWindow.addEventListener("click", () => {
@@ -32,41 +38,33 @@ closeWindow.addEventListener("click", () => {
     event.preventDefault();
 })
 
-
 function openUI() {
-    country.setAttribute("disabled", "disabled");
+    countrySelector.removeAttribute("hidden");
+    countrySelector.setAttribute("aria-live", "polite");
+    selector.setAttribute("aria-expanded", "true");
     selector.classList.add("openCountry");
 }
 
 function closeUI() {
-    country.removeAttribute("disabled");
+    country.setAttribute("disabled", "disabled");
     selector.classList.remove("openCountry");
-    countryselector.setAttribute("hidden", "hidden");
+    selector.setAttribute("aria-expanded", "false");
+    countrySelector.setAttribute("hidden", "hidden");
+    countrySelector.removeAttribute("aria-live");
     console.log("closed");
 }
 
-
-
+//Region Selection - List
+groupLabel.forEach((elem) => {
+    elem.addEventListener("click", () => {
+        country.setAttribute("value", "");
+        let countrySelected = document.querySelector("[name='destinationCountryID']:checked").getAttribute("id");
+        document.getElementById(countrySelected).checked = false;
+        //countrySelected.setAttribute("checked", false);
+    })
+});
 
 //jQuery Legacy
-//$(document).ready(function() {
-//Start JQuery Code
-
-//Country Selection - List
-/*$(".column label").on("click", function() {
-    $("#country").val($(this).text());
-    $(".ui-countryselector").fadeOut("300").attr("hidden", "hidden");
-    $("#country").removeAttr("disabled");
-    $("#selector").removeClass("openCountry");
-})*/
-
-//Closing UI
-/*$(".closeWindow").on("click", function() {
-    $(".ui-countryselector").fadeOut("300").attr("hidden", "hidden");
-    $("#selector").removeClass("openCountry");
-    $("#country").removeAttr("disabled");
-    return false;
-})*/
 
 //Default Loading
 /*if ($("[name='destinationCountryID']:checked").length > 0) {
@@ -125,47 +123,3 @@ function closeUI() {
     }
 
 });*/
-
-//AutoComplete
-/* var data = [];
-
-    $(".quoteWidget .column label").each(function( index, value ){
-        data[index] = $(this).text();           
-    });
-
-    var data2 = ["Australia","Indonesia","New Zealand","Thailand","United States of America"]; //Popular Destinations
-
-	$("#country").autocomplete({
-	    source: function(request, response) {
-
-            if ((request.term || '').length <= 0) {
-				results = $.ui.autocomplete.filter(data2, request.term); */
-/* Initial - Popular */
-/*$("#autoCountry").addClass("popular");           
-            } else {
-				results = $.ui.autocomplete.filter(data, request.term); */
-/* Autocomplete - Search */
-/* $("#autoCountry").removeClass("popular");
-			}  	        
-  	        response(results);
-
-	    },
-		autoFocus: true,
-		minLength: 0,
-		focus: function() {
-			$(this).autocomplete("widget")
-			.appendTo("#autoCountry");
-		},
-        response: function(event, ui) {
-            if (!ui.content.length) {
-                var noResult = { value:"",label:"No results found" };
-                ui.content.push(noResult);
-            }
-        }   			
-	}).focus(function(){     
-		$(this).autocomplete("search");
-    });*/
-
-
-//End JQuery Code
-//});

@@ -110,6 +110,7 @@ label[for="country"] {
     background: url(../files/images/backgrounds/bkg-country.png) no-repeat 50% 50%;
     background-size: 22px auto;
     border: 0;
+    cursor: pointer;
     text-indent: -300px;
     &.countrySelector.openCountry {
         display: none;
@@ -153,7 +154,6 @@ label[for="country"] {
     position: absolute;
     top: 70px;
     z-index: 4;
-    display: block;
     width: 282px;
     height: 200px;
     margin: -13px 0 0 -4px;
