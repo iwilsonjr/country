@@ -4,58 +4,73 @@ var country = document.getElementById("country");
 var countrySelector = document.querySelector(".ui-countryselector");
 var selector = document.getElementById("selector");
 var closeWindow = document.querySelector(".closeWindow");
-var groupLabel = document.querySelectorAll(".group-label"); //Opening UI
+var groupLabel = document.querySelectorAll(".group-label"); //Default Loading
+//initialSet();
+//Opening UI
 
 selector.addEventListener("click", function () {
   openUI();
-}); //Country Selection - List
-
-column.forEach(function (elem) {
-  elem.addEventListener("click", function () {
-    country.setAttribute("value", elem.innerText); //let countrySelected = document.querySelector("[name='destinationCountryID']:checked");
-    //countrySelected.checked = true;
-
-    console.log(elem.getAttribute("for")); // countrySelected.setAttribute("checked", true);
-
-    document.getElementById(elem.getAttribute("for")).checked = true;
-    closeUI();
-  });
-}); //Default Loading
-//if (countrySelected.length > 0) {
-//const countrySelected. 
-//country.setAttribute("value", checked.).val($("[name='destinationCountryID']:checked").siblings("label").text());
-//}
-//Closing UI
+}); //Closing UI
 
 closeWindow.addEventListener("click", function () {
   closeUI();
   event.preventDefault();
-});
+}); //Country Selection - List
+
+column.forEach(function (elem) {
+  elem.addEventListener("click", function () {
+    country.value = elem.innerText;
+    console.log(elem.getAttribute("for"));
+    document.getElementById(elem.getAttribute("for")).checked = true;
+    closeUI();
+  });
+}); //Region Selection - List
+
+groupLabel.forEach(function (elem) {
+  elem.addEventListener("click", function () {
+    country.value = "";
+
+    if (document.querySelector("[name='destinationCountryID']:checked")) {
+      var countrySelected = document.querySelector("[name='destinationCountryID']:checked").getAttribute("id");
+      document.getElementById(countrySelected).checked = false;
+    }
+
+    resetRegion();
+    elem.setAttribute("aria-expanded", "true");
+  });
+}); //Open UI
 
 function openUI() {
   countrySelector.removeAttribute("hidden");
   countrySelector.setAttribute("aria-live", "polite");
   selector.setAttribute("aria-expanded", "true");
   selector.classList.add("openCountry");
-}
+} //Close UI
+
 
 function closeUI() {
   country.setAttribute("disabled", "disabled");
   selector.classList.remove("openCountry");
   selector.setAttribute("aria-expanded", "false");
   countrySelector.setAttribute("hidden", "hidden");
-  countrySelector.removeAttribute("aria-live");
+  countrySelector.setAttribute("aria-live", "off");
   console.log("closed");
-} //Region Selection - List
+} //Region Reset
 
 
-groupLabel.forEach(function (elem) {
-  elem.addEventListener("click", function () {
-    country.setAttribute("value", "");
-    var countrySelected = document.querySelector("[name='destinationCountryID']:checked").getAttribute("id");
-    document.getElementById(countrySelected).checked = false; //countrySelected.setAttribute("checked", false);
+function resetRegion() {
+  groupLabel.forEach(function (elem) {
+    elem.setAttribute("aria-expanded", "false");
   });
-}); //jQuery Legacy
+} //Default Loading
+
+
+function initialSet() {
+  if (document.querySelector("[name='destinationCountryID']:checked").length > 0) {
+    var selectedCountry = document.querySelector("[name='destinationCountryID']:checked");
+    country.value = selectedCountry.nextSibling.innerText;
+  }
+} //jQuery Legacy
 //Default Loading
 
 /*if ($("[name='destinationCountryID']:checked").length > 0) {

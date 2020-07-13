@@ -238,6 +238,19 @@ input[type="radio"]:checked+label~div.columns {
     height: auto;
 }
 
+[aria-live="polite"] {
+    opacity: 1;
+}
+
+[aria-live="off"] {
+    opacity: 0;
+}
+
+[aria-live="polite"],
+[aria-live="off"] {
+    transition: opacity 500ms ease-in;
+}
+
 
 /* Columns */
 

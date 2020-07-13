@@ -1,5 +1,4 @@
 //Updated Code
-
 const column = document.querySelectorAll(".column label");
 const country = document.getElementById("country");
 const countrySelector = document.querySelector(".ui-countryselector");
@@ -8,29 +7,13 @@ const closeWindow = document.querySelector(".closeWindow");
 const groupLabel = document.querySelectorAll(".group-label");
 
 
+//Default Loading
+//initialSet();
+
 //Opening UI
 selector.addEventListener("click", () => {
     openUI();
 })
-
-//Country Selection - List
-column.forEach((elem) => {
-    elem.addEventListener("click", () => {
-        country.setAttribute("value", elem.innerText);
-        //let countrySelected = document.querySelector("[name='destinationCountryID']:checked");
-        //countrySelected.checked = true;
-        console.log(elem.getAttribute("for"));
-        // countrySelected.setAttribute("checked", true);
-        document.getElementById(elem.getAttribute("for")).checked = true;
-        closeUI();
-    })
-});
-
-//Default Loading
-//if (countrySelected.length > 0) {
-//const countrySelected. 
-//country.setAttribute("value", checked.).val($("[name='destinationCountryID']:checked").siblings("label").text());
-//}
 
 //Closing UI
 closeWindow.addEventListener("click", () => {
@@ -38,6 +21,31 @@ closeWindow.addEventListener("click", () => {
     event.preventDefault();
 })
 
+//Country Selection - List
+column.forEach((elem) => {
+    elem.addEventListener("click", () => {
+        country.value = elem.innerText;
+        console.log(elem.getAttribute("for"));
+        document.getElementById(elem.getAttribute("for")).checked = true;
+        closeUI();
+    })
+});
+
+//Region Selection - List
+groupLabel.forEach((elem) => {
+    elem.addEventListener("click", () => {
+        country.value = "";
+        if (document.querySelector("[name='destinationCountryID']:checked")) {
+            let countrySelected = document.querySelector("[name='destinationCountryID']:checked").getAttribute("id");
+            document.getElementById(countrySelected).checked = false;
+        }
+
+        resetRegion();
+        elem.setAttribute("aria-expanded", "true");
+    })
+});
+
+//Open UI
 function openUI() {
     countrySelector.removeAttribute("hidden");
     countrySelector.setAttribute("aria-live", "polite");
@@ -45,24 +53,32 @@ function openUI() {
     selector.classList.add("openCountry");
 }
 
+//Close UI
 function closeUI() {
     country.setAttribute("disabled", "disabled");
     selector.classList.remove("openCountry");
     selector.setAttribute("aria-expanded", "false");
     countrySelector.setAttribute("hidden", "hidden");
-    countrySelector.removeAttribute("aria-live");
+    countrySelector.setAttribute("aria-live", "off");
     console.log("closed");
 }
 
-//Region Selection - List
-groupLabel.forEach((elem) => {
-    elem.addEventListener("click", () => {
-        country.setAttribute("value", "");
-        let countrySelected = document.querySelector("[name='destinationCountryID']:checked").getAttribute("id");
-        document.getElementById(countrySelected).checked = false;
-        //countrySelected.setAttribute("checked", false);
+//Region Reset
+function resetRegion() {
+    groupLabel.forEach((elem) => {
+        elem.setAttribute("aria-expanded", "false");
     })
-});
+}
+
+//Default Loading
+function initialSet() {
+    if (document.querySelector("[name='destinationCountryID']:checked").length > 0) {
+        let selectedCountry = document.querySelector("[name='destinationCountryID']:checked");
+        country.value = selectedCountry.nextSibling.innerText;
+    }
+}
+
+
 
 //jQuery Legacy
 
