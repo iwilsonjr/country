@@ -8,7 +8,7 @@ const groupLabel = document.querySelectorAll(".group-label");
 
 
 //Default Loading
-//initialSet();
+initialSet();
 
 //Opening UI
 selector.addEventListener("click", () => {
@@ -34,14 +34,41 @@ column.forEach((elem) => {
 //Region Selection - List
 groupLabel.forEach((elem) => {
     elem.addEventListener("click", () => {
-        country.value = "";
-        if (document.querySelector("[name='destinationCountryID']:checked")) {
-            let countrySelected = document.querySelector("[name='destinationCountryID']:checked").getAttribute("id");
-            document.getElementById(countrySelected).checked = false;
+
+
+        if (document.body.clientWidth < 980) {
+
+            if (elem.getAttribute("aria-expanded") === "true") {
+                resetRegion();
+                /*elem.previousSibling.checked = false;
+                elem.previousSibling.removeAttribute("checked");
+                console.log("closed");
+                console.log(elem.previousSibling.getAttribute("checked"));
+                console.log(elem.previousSibling.checked);*/
+            } else {
+                elem.setAttribute("aria-expanded", "true");
+                /*console.log("opened");
+                elem.previousSibling.setAttribute("checked", "checked");
+                console.log(elem.previousSibling.getAttribute("checked"));
+                console.log(elem.previousSibling.checked);*/
+            }
+
+
+
+        } else {
+
+            country.value = "";
+            if (document.querySelector("[name='destinationCountryID']:checked")) {
+                let countrySelected = document.querySelector("[name='destinationCountryID']:checked").getAttribute("id");
+                document.getElementById(countrySelected).checked = false;
+            }
+            resetRegion();
+            elem.setAttribute("aria-expanded", "true");
         }
 
-        resetRegion();
-        elem.setAttribute("aria-expanded", "true");
+        //resetRegion();
+        //elem.setAttribute("aria-expanded", "true");
+
     })
 });
 
@@ -67,12 +94,13 @@ function closeUI() {
 function resetRegion() {
     groupLabel.forEach((elem) => {
         elem.setAttribute("aria-expanded", "false");
+        //elem.previousSibling.checked = false;
     })
 }
 
 //Default Loading
 function initialSet() {
-    if (document.querySelector("[name='destinationCountryID']:checked").length > 0) {
+    if (document.body.contains(document.querySelector("[name='destinationCountryID']:checked"))) {
         let selectedCountry = document.querySelector("[name='destinationCountryID']:checked");
         country.value = selectedCountry.nextSibling.innerText;
     }
