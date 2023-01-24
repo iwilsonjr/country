@@ -18,7 +18,7 @@
     "homepage": "https://github.com/iwilsonjr/country#readme",
     "devDependencies": {
         "@babel/core": "^7.17.2",
-        "@babel/preset-env": "^7.15.4",
+        "@babel/preset-env": "^7.20.2",
         "autoprefixer": "^10.4.13",
         "browser-sync": "^2.27.11",
         "cssnano": "^5.1.14",
