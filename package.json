@@ -41,5 +41,7 @@
         "> 1%",
         "IE 11"
     ],
-    "dependencies": {}
+    "dependencies": {
+        "ua-parser-js": "^1.0.33"
+    }
 }
