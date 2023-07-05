@@ -1,17 +1,18 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const pxtorem = require('postcss-pxtorem');
-const browserSync = require('browser-sync').create(); //compile scss into css
-const plumber = require('gulp-plumber');
-const cssnano = require("cssnano");
-const rename = require("gulp-rename");
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglify-es').default;
-const csscomb = require('gulp-csscomb');
-const del = require("del");
-const sourcemaps = require('gulp-sourcemaps');
+import gulp from "gulp";
+const { series, parallel, src, dest, task } = gulp;
+import sass from "gulp-sass";
+import postcss from "gulp-postcss";
+import autoprefixer from "autoprefixer";
+import pxtorem from "postcss-pxtorem";
+import browserSync from "browser-sync"; //compile scss into css
+import plumber from "gulp-plumber";
+import cssnano from "cssnano";
+import rename from "gulp-rename";
+import babel from "gulp-babel";
+import uglify from "gulp-uglify-es";
+import csscomb from "gulp-csscomb";
+import del from "del";
+import sourcemaps from "gulp-sourcemaps";
 
 const processors = [
     pxtorem({

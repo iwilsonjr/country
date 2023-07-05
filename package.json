@@ -3,6 +3,7 @@
     "version": "5.0.0",
     "description": "Country Selector UI",
     "main": "index.js",
+    "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -42,6 +43,7 @@
         "IE 11"
     ],
     "dependencies": {
+        "gulp-cli": "^2.3.0",
         "ua-parser-js": "^1.0.35"
     }
 }
