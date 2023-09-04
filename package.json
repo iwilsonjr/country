@@ -3,7 +3,6 @@
     "version": "5.0.0",
     "description": "Country Selector UI",
     "main": "index.js",
-    "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -18,12 +17,13 @@
     },
     "homepage": "https://github.com/iwilsonjr/country#readme",
     "devDependencies": {
-        "@babel/core": "^7.22.6",
-        "@babel/preset-env": "^7.22.6",
+        "@babel/core": "^7.22.5",
+        "@babel/preset-env": "^7.21.5",
         "autoprefixer": "^10.4.14",
         "browser-sync": "^2.29.3",
         "cssnano": "^6.0.1",
         "del": "^7.0.0",
+        "fix-esm": "^1.0.1",
         "gulp": "^4.0.2",
         "gulp-babel": "^8.0.0",
         "gulp-csscomb": "^3.1.0",

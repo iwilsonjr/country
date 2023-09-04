@@ -1,18 +1,17 @@
-import gulp from "gulp";
-const { series, parallel, src, dest, task } = gulp;
-import sass from "gulp-sass";
-import postcss from "gulp-postcss";
-import autoprefixer from "autoprefixer";
-import pxtorem from "postcss-pxtorem";
-import browserSync from "browser-sync"; //compile scss into css
-import plumber from "gulp-plumber";
-import cssnano from "cssnano";
-import rename from "gulp-rename";
-import babel from "gulp-babel";
-import uglify from "gulp-uglify-es";
-import csscomb from "gulp-csscomb";
-import del from "del";
-import sourcemaps from "gulp-sourcemaps";
+const gulp = require("fix-esm").require('gulp');
+const sass = require("fix-esm").require('gulp-sass');
+const postcss = require("fix-esm").require('gulp-postcss');
+const autoprefixer = require("fix-esm").require('autoprefixer');
+const pxtorem = require("fix-esm").require('postcss-pxtorem');
+const browserSync = require("fix-esm").require('browser-sync').create(); //compile scss into css
+const plumber = require("fix-esm").require('gulp-plumber');
+const cssnano = require("fix-esm").require("cssnano");
+const rename = require("fix-esm").require("gulp-rename");
+const babel = require("fix-esm").require('gulp-babel');
+const uglify = require("fix-esm").require('gulp-uglify-es').default;
+const csscomb = require("fix-esm").require('gulp-csscomb');
+const del = require("fix-esm").require("del");
+const sourcemaps = require("fix-esm").require('gulp-sourcemaps');
 
 const processors = [
     pxtorem({
