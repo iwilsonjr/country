@@ -43,6 +43,6 @@
     ],
     "dependencies": {
         "gulp-cli": "^2.3.0",
-        "ua-parser-js": "^1.0.35"
+        "ua-parser-js": "^1.0.37"
     }
 }
